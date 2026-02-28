@@ -30,6 +30,7 @@ Every project produces a structured planning folder. All deliverables are organi
    * **`api_[service_name].md`** — Base URL, authentication method, key endpoints (method, path, params, response shape), rate limits, error codes.
    * **`lib_[library_name].md`** — Installation, core API/usage patterns, configuration options, known caveats.
 4. **Populate references during Phase 3** when the tech stack is finalized, and keep them updated as the stack evolves.
+5. **All deliverables must be written in English**, regardless of the user's input language. The user may communicate in any language, but every document produced (PRD, design, techstack, tasks, references) must be in professional English.
 
 ---
 
