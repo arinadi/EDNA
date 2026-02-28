@@ -94,8 +94,7 @@ No magic phrase needed. Just tell EDNA your problem:
 
 | File | Description |
 |------|-------------|
-| [`agent.md`](agent.md) | Original agent prompt (v1) |
-| [`agent_v2.md`](agent_v2.md) | Current agent prompt with organized folder structure |
+| [`agent.md`](agent.md) | Agent EDNA prompt — persona, phases, folder structure |
 | [`README.md`](README.md) | You are here, dahling |
 
 ---
