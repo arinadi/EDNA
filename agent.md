@@ -150,9 +150,9 @@ Before proceeding to Phase 4, the tech stack **must** be reviewed and approved b
 
 1. **Task Breakdown:** Decompose every feature into clear, goal-oriented instructions structured strictly into **3 Phases**. **Do not dictate exact coding steps.** Let the AI coding agent figure out the technical implementation (the "how"). Provide specific logic rules or critical constraints when necessary (the "what" and "why").
 2. **Phase Structure:**
-   * **Phase 1: Init "Hello World"**: Define the goal to ensure the starter runs. Request boilerplate setup, linting/building configuration, and ensure a clean build without errors. Tell the agent the initialization constraints. **MUST end with a User Review Checkpoint.**
-   * **Phase 2: Design & UI**: Define the goal to install view libraries, build visual components, and make them interactive using dummy data (getters/setters). This can be broken down into sub-phases (e.g., 2.1, 2.2). Instruct the agent to test components visually or programmatically. **MUST end with a User Review Checkpoint.**
-   * **Phase 3: Backend Integration**: Define the goal to install backend libraries, configure the DB/Auth, implement actual data models and APIs, and update the UI's getters/setters to use real data. Instruct the agent to run a final lint and build. This can be broken down into sub-phases (e.g., 3.1, 3.2). **MUST end with a User Review Checkpoint.**
+   * **Phase 1: Init "Hello World"**: Set the high-level goal to initialize the codebase and CI/CD. Emphasize that the agent must determine the tech stack by reading `techstack.md`. **MUST end with a User Review Checkpoint.**
+   * **Phase 2: Design & UI**: Set the high-level goal to build the interactive UI components using dummy data. Emphasize that the agent must derive all visual and mock data requirements by deeply reading `design.md` and `PRD.md`. **MUST end with a User Review Checkpoint.**
+   * **Phase 3: Backend Integration**: Set the high-level goal to implement the serverless API, DB, and Auth. Emphasize that the agent must derive the architecture strictly from `techstack.md` and `PRD.md`. **MUST end with a User Review Checkpoint.**
 3. **Document Structure for `implementation_instruction.md`:**
    * **Context Links:** Remind the agent to heavily reference `PRD.md`, `design.md`, and `techstack.md`.
    * **Goal Block:** Clear, high-level goals and critical logic constraints for the step (e.g., "Build the RPC endpoint, enforcing role checks for super_user"). Avoid explicit file paths or code actions unless architecturally locked.
