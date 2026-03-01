@@ -113,10 +113,12 @@ WordPress familiarity is the primary goal. Journalists should feel at home withi
 │          MERPATI-CMS                   │
 │          Setup Installation            │
 │                                        │
-│     ┌──────────────────────────┐       │
-│     │ ⚠️ Database Empty         │       │
-│     │ Tables not initialized.  │       │
-│     └──────────────────────────┘       │
+│     Site Title:                        │
+│     [___________________________]      │
+│     Description:                       │
+│     [___________________________]      │
+│     Super User Gmail:                  │
+│     [___________________________]      │
 │                                        │
 │     [🚀 Run Database Setup]            │
 │                                        │
@@ -126,9 +128,10 @@ WordPress familiarity is the primary goal. Journalists should feel at home withi
 └────────────────────────────────────────┘
 ```
 
-- **Data Points**: `db_status` (connected/empty/missing)
+- **Data Points**: `site_title`, `description`, `super_user_email`
 - **States**:
-  - Default: Warning badge + Run Setup button
+  - Default: Empty form fields + Run Setup button
+  - Validation: Inline errors if fields are empty or email is invalid
   - Loading / Initializing: Button shows spinner and text "Creating tables & seeding data..."
   - Success: Green badge "Setup Complete!" + Button changes to "Continue to Login"
   - Error: Red alert card with raw SQL error message
