@@ -14,16 +14,20 @@
 * **Logic/Constraint:** Use standard Next.js conventions. Tailor the setup according to the core stack described in `techstack.md`. Ensure dependencies are correctly installed.
 * **Validation:** Clean initialization.
 
-### Step 1.2: Clean Up & Hello World
+### Step 1.2: Environment & Backend Setup
+* **Goal:** Create the basic wiring for the backend stack to prepare for development.
+* **Logic/Constraint:** Set up a `.env.local` file placeholder for expected environment variables (Neon DB URL, Vercel Blob tokens, Auth.js secrets, Google Client IDs, Telegram tokens). Provide instructions on what the user needs to populate. Ensure the Next.js `next.config.ts` allows external images from Vercel Blob and Google avatars.
+
+### Step 1.3: Clean Up & Hello World
 * **Goal:** Remove default boilerplate and create basic "Hello World" entry points for both the public facing site and the secure admin dashboard area.
 * **Logic/Constraint:** The public root should be cleanly separated from the admin root.
 * **Validation:** Run the dev server. Ensure both public and admin routes successfully return the newly created content without errors.
 
-### Step 1.3: CI/CD Verification
+### Step 1.4: CI/CD Verification
 * **Goal:** Verify the foundation is production-ready.
 * **Validation:** Run your package manager's lint and build commands. Fix any warnings or errors. Ensure it outputs an optimized production build successfully.
 
-### Step 1.4: User Review Checkpoint
+### Step 1.5: User Review Checkpoint
 * **Action:** Pause execution. Notify the user that Phase 1 is complete. Ask the user to review the clean setup and "Hello World" pages. **Do not proceed to Phase 2 until explicit user approval is given.**
 
 ---
