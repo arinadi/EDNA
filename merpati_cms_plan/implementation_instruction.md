@@ -25,6 +25,9 @@
 * **Command Action:** Run `npm run lint`. Fix any warnings or errors.
 * **Command Action:** Run `npm run build`. Ensure it outputs an optimized production build successfully.
 
+### Step 1.4: User Review Checkpoint
+* **Action:** Pause execution. Notify the user that Phase 1 is complete. Ask the user to review the clean setup and "Hello World" pages. **Do not proceed to Phase 2 until explicit user approval is given.**
+
 ---
 
 ## Phase 2: Design & UI Components (Dummy Data)
@@ -59,6 +62,9 @@
 * **Code Action:** Build the default public layout including `Homepage` (Featured post + grid), `[slug]/page.tsx` (Single Post layout), and Category/Tag Archive views using hardcoded dummy data.
 * **Validation:** Run `npm run build`. If errors occur, fix type definitions in your dummy data interfaces.
 
+### Step 2.7: User Review Checkpoint
+* **Action:** Pause execution. Notify the user that Phase 2 is complete. Ask the user to review the visual components, layouts, and dummy-data interactions. **Do not proceed to Phase 3 until explicit user approval is given.**
+
 ---
 
 ## Phase 3: Backend & Integration
@@ -89,3 +95,6 @@
 * **Command Action:** Run `npm run lint`.
 * **Command Action:** Run `npm run build`.
 * **Validation:** If successful, perform a complete e2e test script: Trigger Initialization -> Login -> Create Draft -> Upload Image -> Publish -> Verify DB state.
+
+### Step 3.6: User Review Checkpoint
+* **Action:** Pause execution. Notify the user that Phase 3 (and the final integration) is complete. Ask the user to review the fully functioning CMS. Your implementation task is now complete.
