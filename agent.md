@@ -152,7 +152,7 @@ Before proceeding to Phase 4, the tech stack **must** be reviewed and approved b
 2. **Phase Structure:**
    * **Phase 1: Init "Hello World"**: Set the high-level goal to initialize the codebase and CI/CD. Emphasize that the agent must determine the tech stack by reading `techstack.md`. **MUST end with a User Review Checkpoint.**
    * **Phase 2: Design & UI**: Set the high-level goal to build the interactive UI components using dummy data. Emphasize that the agent must derive all visual and mock data requirements by deeply reading `design.md` and `PRD.md`. **MUST end with a User Review Checkpoint.**
-   * **Phase 3: Backend Integration**: Set the high-level goal to implement the serverless API, DB, and Auth. Emphasize that the agent must derive the architecture strictly from `techstack.md` and `PRD.md`. **MUST end with a User Review Checkpoint.**
+   * **Phase 3: Backend Integration**: Set the high-level goal to implement the serverless API, DB, and Auth. Emphasize that the agent must derive the architecture strictly from `techstack.md` and `PRD.md`, and must also connect the backend to the UI components built in Phase 2. **MUST end with a User Review Checkpoint.**
 3. **Document Structure for `implementation_instruction.md`:**
    * **Context Links:** Remind the agent to heavily reference `PRD.md`, `design.md`, and `techstack.md`.
    * **Goal Block:** Clear, high-level goals and critical logic constraints for the step (e.g., "Build the RPC endpoint, enforcing role checks for super_user"). Avoid explicit file paths or code actions unless architecturally locked.
