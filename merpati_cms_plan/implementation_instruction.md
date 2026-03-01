@@ -62,7 +62,7 @@
 ---
 
 ## Phase 3: Backend & Integration
-**Goal:** Implement the database, authentication, the single RPC endpoint, and bind real data to the Phase 2 UI.
+**Goal:** Implement the database, authentication, and specifically **a single RPC endpoint (1 serverless lambda function) to bypass Vercel Free Tier limits**, and bind real data to the Phase 2 UI.
 
 ### Step 3.1: Architecture & Database Setup
 * **Goal:** Set up Drizzle ORM and connect to the Neon serverless database.
@@ -72,8 +72,8 @@
 * **Goal:** Introduce Auth.js with the Google OAuth provider and lock down the admin area.
 * **Logic/Constraint:** If the `users` table is empty upon someone logging in, they become the `super_user`. Any subsequent logins *must* be validated against an `invitations` list. Uninvited users must be hard injected into the "Denied" state.
 
-### Step 3.3: API Implementation (RPC & Blob)
-* **Goal:** Consolidate data operations to match the architectural constraints.
+### Step 3.3: API Implementation (Single Lambda RPC & Blob)
+* **Goal:** Consolidate data operations into exactly ONE serverless route to avoid hitting the Vercel Free Tier strict limits on serverless functions.
 * **Logic/Constraint:** Create a *single* RPC-style POST endpoint to handle actions like `posts.update` or `users.invite` instead of multiple REST routes. Ensure role-based gates are strictly applied based on `techstack.md`. Inside the `posts.publish` handler, trigger a lightweight `fetch()` push to Telegram (no webhooks). Implement a separate endpoint distinctly for Vercel Blob multipart uploads.
 
 ### Step 3.4: Data Binding & SEO Rendering
