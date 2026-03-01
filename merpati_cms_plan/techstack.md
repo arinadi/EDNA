@@ -306,6 +306,8 @@ All requests to `/api/rpc` must be `POST` requests with a JSON body following th
 
 | Action | Auth Role | Payload Example | Returns |
 |---|---|---|---|
+| **System** |
+| `system.setup` | none | `{ "site_title": "...", "description": "...", "super_user_email": "..." }` | Success boolean |
 | **Posts** |
 | `posts.list` | any | `{ "status": "draft", "page": 1 }` | Paginated post list |
 | `posts.get` | any | `{ "id": "uuid" }` | Single post object |

@@ -39,9 +39,13 @@
 * **Goal:** Establish the foundational CSS variables and typography based on the 'WordPress Modern' theme described in `design.md`.
 * **Logic/Constraint:** Build reusable UI primitive components (Buttons demonstrating all states, form Inputs, loaders) and a global Toast notification system. 
 
-### Step 2.2: Auth & Admin Shell UI
-* **Goal:** Scaffold the core layouts for the locked admin area and the login screen.
-* **Logic/Constraint:** The Login view must visually represent Loading, Denied, and Error states according to `design.md`. The Admin layout must be a responsive shell (Sidebar, TopBar) handling desktop, tablet, and mobile views. The Dashboard should present a 2-column grid using static dummy data.
+### Step 2.2: Setup & Auth UI
+* **Goal:** Scaffold the core layouts for the zero-terminal database initialization and the login screen.
+* **Logic/Constraint:** Build the Setup Installation page (`app/(auth)/setup/page.tsx`) with inputs for Site Title, Description, and Super User Gmail, handling validation, loading, and success states. Build the Login view visually representing Loading, Denied, and Error states according to `design.md`.
+
+### Step 2.3: Admin Shell UI
+* **Goal:** Scaffold the core layouts for the locked admin area.
+* **Logic/Constraint:** The Admin layout must be a responsive shell (Sidebar, TopBar) handling desktop, tablet, and mobile views. The Dashboard should present a 2-column grid using static dummy data.
 
 ### Step 2.3: Post Management & Editor UI (The Core)
 * **Goal:** Build the primary interfaces journalists will interact with.
@@ -78,7 +82,7 @@
 
 ### Step 3.3: API Implementation (Single Lambda RPC & Blob)
 * **Goal:** Consolidate data operations into exactly ONE serverless route to avoid hitting the Vercel Free Tier strict limits on serverless functions.
-* **Logic/Constraint:** Create a *single* RPC-style POST endpoint to handle actions like `posts.update` or `users.invite` instead of multiple REST routes. Ensure role-based gates are strictly applied based on `techstack.md`. Inside the `posts.publish` handler, trigger a lightweight `fetch()` push to Telegram (no webhooks). Implement a separate endpoint distinctly for Vercel Blob multipart uploads.
+* **Logic/Constraint:** Create a *single* RPC-style POST endpoint to handle actions like `system.setup`, `posts.update` or `users.invite` instead of multiple REST routes. Ensure role-based gates are strictly applied based on `techstack.md`. Inside the `posts.publish` handler, trigger a lightweight `fetch()` push to Telegram (no webhooks). Implement a separate endpoint distinctly for Vercel Blob multipart uploads.
 
 ### Step 3.4: Data Binding & SEO Rendering
 * **Goal:** Connect everything together.
