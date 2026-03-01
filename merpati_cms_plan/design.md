@@ -103,6 +103,38 @@ WordPress familiarity is the primary goal. Journalists should feel at home withi
 
 ---
 
+### Page: Setup / Initialization
+
+**Structure**: Centered card, fullscreen gradient background.
+
+```
+┌────────────────────────────────────────┐
+│                                        │
+│          MERPATI-CMS                   │
+│          Setup Installation            │
+│                                        │
+│     ┌──────────────────────────┐       │
+│     │ ⚠️ Database Empty         │       │
+│     │ Tables not initialized.  │       │
+│     └──────────────────────────┘       │
+│                                        │
+│     [🚀 Run Database Setup]            │
+│                                        │
+│     "Press freedom begins with         │
+│      infrastructure independence."     │
+│                                        │
+└────────────────────────────────────────┘
+```
+
+- **Data Points**: `db_status` (connected/empty/missing)
+- **States**:
+  - Default: Warning badge + Run Setup button
+  - Loading / Initializing: Button shows spinner and text "Creating tables & seeding data..."
+  - Success: Green badge "Setup Complete!" + Button changes to "Continue to Login"
+  - Error: Red alert card with raw SQL error message
+
+---
+
 ### Page: Login
 
 **Structure**: Centered card, fullscreen gradient background.
