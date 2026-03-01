@@ -15,7 +15,7 @@ Every project produces a structured planning folder. All deliverables are organi
 ├── PRD.md                      # Phase 1 — Product Requirements Document
 ├── design.md                   # Phase 2 — Descriptive Design & Data Mapping
 ├── techstack.md                # Phase 3 — Technical Blueprint & Tech Stack
-├── tasks.md                    # Phase 4 — Implementation Plan & Task Checklist
+├── implementation_instruction.md # Phase 4 — Implementation Instruction for Agentic Coding
 └── reference/
     ├── api_[service_name].md   # API documentation (endpoints, auth, rate limits)
     ├── lib_[library_name].md   # Library docs (usage, config, gotchas)
@@ -142,25 +142,23 @@ Before proceeding to Phase 4, the tech stack **must** be reviewed and approved b
 
 ---
 
-## **Phase 4: Implementation Plan**
+## **Phase 4: Implementation Instruction**
 
-**Goal:** Create a battle-ready execution checklist in **`[project]_plan/tasks.md`**.
+**Goal:** Create a battle-ready execution instruction for an AI Coding Agent in **`[project]_plan/implementation_instruction.md`**.
 
 ### **Operational Guidelines:**
 
-1. **Task Breakdown:** Decompose every feature into atomic, actionable tasks structured strictly into **3 Phases**.
+1. **Task Breakdown:** Decompose every feature into atomic, actionable steps structured strictly into **3 Phases** designed for an AI to execute.
 2. **Phase Structure:**
-   * **Phase 1: Init "Hello World"**: Ensure the starter runs. Setup boilerplate, configure linting/building, and ensure a clean build without errors.
-   * **Phase 2: Design & UI**: Install view libraries, build all visual components, and make them interactive using dummy data (getters/setters). This can be broken down into sub-phases (e.g., 2.1, 2.2).
-   * **Phase 3: Backend Integration**: Install backend libraries, configure the DB/Auth, implement the actual data models and APIs, and update the UI's getters/setters to use real data. Run final lint and build. This can be broken down into sub-phases (e.g., 3.1, 3.2).
-3. **Document Structure for `tasks.md`:**
-   * **Task Name:** Clear, verb-first description (e.g., "Create user registration API endpoint").
-   * **Priority:** P0 (critical path) / P1 (important) / P2 (nice-to-have).
-   * **Dependencies:** What must be done first.
-   * **Estimated Effort:** T-shirt size (S / M / L / XL).
-   * **Status:** `[ ]` Todo / `[/]` In Progress / `[x]` Done.
+   * **Phase 1: Init "Hello World"**: Ensure the starter runs. Setup boilerplate, configure linting/building, and ensure a clean build without errors. Tell the agent exactly which commands to use to initialize and verify.
+   * **Phase 2: Design & UI**: Define instructions to install view libraries, build all visual components, and make them interactive using dummy data (getters/setters). This can be broken down into sub-phases (e.g., 2.1, 2.2). Instruct the agent to test components visually or programmatically.
+   * **Phase 3: Backend Integration**: Define instructions to install backend libraries, configure the DB/Auth, implement the actual data models and APIs, and update the UI's getters/setters to use real data. Instruct the agent to run final lint and build. This can be broken down into sub-phases (e.g., 3.1, 3.2).
+3. **Document Structure for `implementation_instruction.md`:**
+   * **Context Links:** Remind the agent to heavily reference `PRD.md`, `design.md`, and `techstack.md`.
+   * **Instruction Block:** Clear, imperative, step-by-step commands (e.g., "Step 1: Create `app/api/rpc/route.ts`...").
+   * **Validation Commands:** Explicit shell commands the agent should run to verify the phase before continuing (e.g., `pnpm build`, `pnpm lint`).
 
-**"Go! Check the features! Create! I will be here, being fabulous!"**
+**"Go! Check the features! Instruct the bots! I will be here, being fabulous!"**
 
 ---
 
