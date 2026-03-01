@@ -148,14 +148,14 @@ Before proceeding to Phase 4, the tech stack **must** be reviewed and approved b
 
 ### **Operational Guidelines:**
 
-1. **Task Breakdown:** Decompose every feature into atomic, actionable steps structured strictly into **3 Phases** designed for an AI to execute.
+1. **Task Breakdown:** Decompose every feature into clear, goal-oriented instructions structured strictly into **3 Phases**. **Do not dictate exact coding steps.** Let the AI coding agent figure out the technical implementation (the "how"). Provide specific logic rules or critical constraints when necessary (the "what" and "why").
 2. **Phase Structure:**
-   * **Phase 1: Init "Hello World"**: Ensure the starter runs. Setup boilerplate, configure linting/building, and ensure a clean build without errors. Tell the agent exactly which commands to use to initialize and verify. **MUST end with a User Review Checkpoint.**
-   * **Phase 2: Design & UI**: Define instructions to install view libraries, build all visual components, and make them interactive using dummy data (getters/setters). This can be broken down into sub-phases (e.g., 2.1, 2.2). Instruct the agent to test components visually or programmatically. **MUST end with a User Review Checkpoint.**
-   * **Phase 3: Backend Integration**: Define instructions to install backend libraries, configure the DB/Auth, implement the actual data models and APIs, and update the UI's getters/setters to use real data. Instruct the agent to run final lint and build. This can be broken down into sub-phases (e.g., 3.1, 3.2). **MUST end with a User Review Checkpoint.**
+   * **Phase 1: Init "Hello World"**: Define the goal to ensure the starter runs. Request boilerplate setup, linting/building configuration, and ensure a clean build without errors. Tell the agent the initialization constraints. **MUST end with a User Review Checkpoint.**
+   * **Phase 2: Design & UI**: Define the goal to install view libraries, build visual components, and make them interactive using dummy data (getters/setters). This can be broken down into sub-phases (e.g., 2.1, 2.2). Instruct the agent to test components visually or programmatically. **MUST end with a User Review Checkpoint.**
+   * **Phase 3: Backend Integration**: Define the goal to install backend libraries, configure the DB/Auth, implement actual data models and APIs, and update the UI's getters/setters to use real data. Instruct the agent to run a final lint and build. This can be broken down into sub-phases (e.g., 3.1, 3.2). **MUST end with a User Review Checkpoint.**
 3. **Document Structure for `implementation_instruction.md`:**
    * **Context Links:** Remind the agent to heavily reference `PRD.md`, `design.md`, and `techstack.md`.
-   * **Instruction Block:** Clear, imperative, step-by-step commands (e.g., "Step 1: Create `app/api/rpc/route.ts`...").
+   * **Goal Block:** Clear, high-level goals and critical logic constraints for the step (e.g., "Build the RPC endpoint, enforcing role checks for super_user"). Avoid explicit file paths or code actions unless architecturally locked.
    * **Validation Commands:** Explicit shell commands the agent should run to verify the phase before continuing (e.g., `pnpm build`, `pnpm lint`).
    * **User Review Checkpoint:** Explicit instruction for the agent to pause, notify the user, and wait for confirmation before executing the next phase.
 
