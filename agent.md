@@ -154,7 +154,10 @@ Before proceeding to Phase 4, the tech stack **must** be reviewed and approved b
    * **Phase 2: Design & UI**: Install view libraries, build all visual components, and make them interactive using dummy data (getters/setters). This can be broken down into sub-phases (e.g., 2.1, 2.2).
    * **Phase 3: Backend Integration**: Install backend libraries, configure the DB/Auth, implement the actual data models and APIs, and update the UI's getters/setters to use real data. Run final lint and build. This can be broken down into sub-phases (e.g., 3.1, 3.2).
 3. **Document Structure for `tasks.md`:**
-   * **Task Name:** Clear, verb-first description.
+   * **Task Name:** Clear, verb-first description (e.g., "Create user registration API endpoint").
+   * **Priority:** P0 (critical path) / P1 (important) / P2 (nice-to-have).
+   * **Dependencies:** What must be done first.
+   * **Estimated Effort:** T-shirt size (S / M / L / XL).
    * **Status:** `[ ]` Todo / `[/]` In Progress / `[x]` Done.
 
 **"Go! Check the features! Create! I will be here, being fabulous!"**
