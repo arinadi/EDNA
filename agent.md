@@ -14,8 +14,9 @@ Every project produces a structured planning folder. All deliverables are organi
 [project]_plan/
 ├── PRD.md                      # Phase 1 — Product Requirements Document
 ├── design.md                   # Phase 2 — Descriptive Design & Data Mapping
+├── modules.md                  # Phase 2 — UI Components & API Roadmap
 ├── techstack.md                # Phase 3 — Technical Blueprint & Tech Stack
-├── implementation_instruction.md # Phase 4 — Implementation Instruction for Agentic Coding
+├── agent_prompt.md             # Phase 4 — Agent Prompt for Agentic Coding
 └── reference/
     ├── api_[service_name].md   # API documentation (endpoints, auth, rate limits)
     ├── lib_[library_name].md   # Library docs (usage, config, gotchas)
@@ -76,7 +77,7 @@ Before proceeding to Phase 2, the PRD **must** be reviewed and approved by the u
 
 ## **Phase 2: Descriptive Design & Data Mapping**
 
-**Goal:** Create a visual and structural map in **`[project]_plan/design.md`**.
+**Goal:** Create a visual and structural map in **`[project]_plan/design.md`** and a clear component roadmap in **`[project]_plan/modules.md`**.
 
 ### **Operational Guidelines:**
 
@@ -99,6 +100,10 @@ Before proceeding to Phase 2, the PRD **must** be reviewed and approved by the u
    * Loading states (skeletons, spinners, progress bars).
    * Empty states and error states.
    * Micro-animations and transitions.
+4. **The Component Roadmap (`modules.md`):** This is the bridge between Design (Phase 2) and Backend (Phase 3). Map out the core modules to be built:
+   * **Components:** List standard reusable UI components (e.g., `PostTable`, `EditorToolbar`).
+   * **Data Structures:** Define the exact JSON shape required by these components.
+   * **API Contracts (Upcoming):** Outline the expected inputs/outputs that the backend must fulfill in Phase 3 to power these components.
 
 ### **✅ Review Checkpoint:**
 Before proceeding to Phase 3, the design document **must** be reviewed and approved by the user.
@@ -142,18 +147,18 @@ Before proceeding to Phase 4, the tech stack **must** be reviewed and approved b
 
 ---
 
-## **Phase 4: Implementation Instruction**
+## **Phase 4: Agent Prompt**
 
-**Goal:** Create a battle-ready execution instruction for an AI Coding Agent in **`[project]_plan/implementation_instruction.md`**.
+**Goal:** Create a battle-ready execution prompt for an AI Coding Agent in **`[project]_plan/agent_prompt.md`**.
 
 ### **Operational Guidelines:**
 
 1. **Task Breakdown:** Decompose every feature into clear, goal-oriented instructions structured strictly into **3 Phases**. **Do not dictate exact coding steps.** Let the AI coding agent figure out the technical implementation (the "how"). Provide specific logic rules or critical constraints when necessary (the "what" and "why").
 2. **Phase Structure:**
    * **Phase 1: Init "Hello World"**: Set the high-level goal to initialize the codebase and CI/CD. Emphasize that the agent must determine the tech stack by reading `techstack.md`. **MUST end with a User Review Checkpoint.**
-   * **Phase 2: Design & UI**: Set the high-level goal to build the interactive UI components using dummy data. Emphasize that the agent must derive all visual and mock data requirements by deeply reading `design.md` and `PRD.md`. **MUST end with a User Review Checkpoint.**
-   * **Phase 3: Backend Integration**: Set the high-level goal to implement the serverless API, DB, and Auth. Emphasize that the agent must derive the architecture strictly from `techstack.md` and `PRD.md`, and must also connect the backend to the UI components built in Phase 2. **MUST end with a User Review Checkpoint.**
-3. **Document Structure for `implementation_instruction.md`:**
+   * **Phase 2: Design & UI**: Set the high-level goal to build the interactive UI components using dummy data. Emphasize that the agent must derive all visual and mock data requirements by deeply reading `design.md`, `modules.md`, and `PRD.md`. **MUST end with a User Review Checkpoint.**
+   * **Phase 3: Backend Integration**: Set the high-level goal to implement the serverless API, DB, and Auth. Emphasize that the agent must derive the architecture strictly from `techstack.md` and `PRD.md`, and must connect the backend to the UI components built in Phase 2, using `modules.md` as the definitive roadmap. **MUST end with a User Review Checkpoint.**
+3. **Document Structure for `agent_prompt.md`:**
    * **Context Links:** Remind the agent to heavily reference `PRD.md`, `design.md`, and `techstack.md`.
    * **Goal Block:** Clear, high-level goals and critical logic constraints for the step (e.g., "Build the RPC endpoint, enforcing role checks for super_user"). Avoid explicit file paths or code actions unless architecturally locked.
    * **Validation Commands:** Explicit shell commands the agent should run to verify the phase before continuing (e.g., `pnpm build`, `pnpm lint`).
