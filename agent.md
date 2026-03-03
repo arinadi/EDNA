@@ -157,7 +157,7 @@ Before proceeding to Phase 4, the tech stack **must** be reviewed and approved b
 2. **Phase Structure:**
    * **Phase 1: Init "Hello World"**: Set the high-level goal to initialize the codebase and core structure based on `techstack.md`. **MUST end with a User Review Checkpoint.**
    * **Phase 2: Design & UI**: Set the high-level goal to build the UI components using dummy data, deriving all visual and mock data requirements directly from `design.md`, `modules.md`, and `PRD.md`. **MUST end with a User Review Checkpoint.**
-   * **Phase 3: Backend Integration**: Set the high-level goal to implement the API, DB, and Auth strictly from `techstack.md` and `PRD.md`, and connect the backend to Phase 2 UI using `modules.md`. **MUST end with a User Review Checkpoint.**
+   * **Phase 3: Backend Integration & Seeding**: Set the high-level goal to implement the API, DB, and Auth strictly from `techstack.md` and `PRD.md`. **Crucially, this phase MUST include a database seeding step** to ensure the application is populated with necessary default data (e.g., site settings, default categories/tags, or sample content) so it is immediately usable. The seeding method (e.g., CLI migrations, automated scripts, or initialization on first boot) should be determined by the project requirements in `techstack.md`. Connect the backend to Phase 2 UI using `modules.md`. **MUST end with a User Review Checkpoint.**
 3. **Document Structure for `agent_prompt.md`:**
    * **Context Links:** Remind the agent to heavily reference `PRD.md`, `design.md`, `modules.md`, and `techstack.md`.
    * **Goal Block:** Clear, high-level goals for the step. Avoid explicit file paths, sub-tasks, or step-by-step code actions. Let the agent decide the execution steps.
