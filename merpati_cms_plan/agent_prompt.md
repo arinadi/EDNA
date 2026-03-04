@@ -1,57 +1,29 @@
-# MERPATI-CMS — Agent Prompt for Agentic Coding
+# Agent Prompt: MERPATI-CMS Iterative Coding Instructions
 
-**MERPATI** — *Media Editorial Ringkas, Praktis, Aman, Tetap Independen*
+## Overview
+You are tasked with building MERPATI-CMS, a high-performance, serverless publishing platform. Your development process must strictly follow the pre-defined architecture and sequence outlined in the project planning documents.
 
-> Phase 4 deliverable per Agent EDNA methodology.
+## Context & Rules
+Before writing any code, you MUST review the following foundational documents to understand the global constraints, tech stack, and design rules:
+1.  **`PRD.md`**: Understands the core goals ("Media Editorial Ringkas, Praktis, Aman, Tetap Independen") and the "No Capes" philosophy.
+2.  **`modules.md`**: Grasp the Global Tech Stack (Next.js, Tailwind v4, Drizzle, Neon, Auth.js) and the strict separation between Admin UI (`shadcn/ui`) and Public UI (Pure Tailwind v4).
+3.  **`reference/*`**: Review specific library integrations like Drizzle/Neon, Auth.js JWT strategy, TipTap, Telegram API, and Vercel Blob.
 
----
+## Execution Sequence (The Module Orchestration)
+The project is divided into 9 sequential modules located in the `modules/` directory (`0-setup.md` through `8-seo.md`). You must build the application module by module.
 
-## **Context Links (CRITICAL)**
+**CRITICAL DIRECTIVES FOR EXECUTION:**
+1.  **Iterative Focus:** Do not attempt to build the entire CMS at once. Focus purely on the requirements of the *current* module file you are executing.
+2.  **Context Amnesia Prevention:** Before starting a new module, **you MUST review the codebase and files created in previous modules**. Reuse existing components, layouts, utility functions, and schema definitions to prevent duplication and ensure consistency.
+3.  **Strict Pausing:** After completing the tasks within a specific `modules/X-*.md` file, you MUST **pause, explain what was achieved, notify the user, and wait for explicit approval** before proceeding to the next module. 
+4.  **Verification:** Before requesting approval for a completed module, run `pnpm lint` and `pnpm build` (or `npm run build`) to ensure the application compiles successfully and there are no glaring TypeScript errors.
 
-Before you write any code, you must deeply understand the project by reading the following documents:
-- **`PRD.md`**: Core features, user flows, and project goals (Vercel Free Tier constraint, invite-only auth).
-- **`design.md`**: Visual layout definitions, admin theme (shadcn), and mock UI structures.
-- **`modules.md`**: The UI components definition and their exact API payload boundaries.
-- **`techstack.md`**: The DB schema definitions (Drizzle ORM), Next.js architecture, and single RPC endpoint strategy.
+## How to Start
+When the user says "Begin Execution" or "Start Module 0":
+1.  Read `modules/0-setup.md` carefully.
+2.  Execute the scaffolding, styling setup, and database initialization defined within it.
+3.  Verify the setup.
+4.  Pause and request user approval.
+5.  Wait for the command to proceed to Module 1.
 
-**Note**: Do not look for duplicated info. Each file contains specific aspects of the architecture (DRY Principle). Combine their contexts to build the app autonomously.
-
----
-
-## **Phase 1: Init "Hello World"**
-
-**Goal:** Scaffold the foundation repository with `Next.js App Router`, tailwind config, and CI/CD basics.
-
-**Validation Commands:**
-- `pnpm install`
-- `pnpm run build`
-- `pnpm run lint`
-
-### **🛑 User Review Checkpoint**
-Pause here. Awaiting review to begin Phase 2.
-
----
-
-## **Phase 2: Design & UI**
-
-**Goal:** Build the interactive UI components for Admin using mock data, strictly following `design.md` layout descriptions and `modules.md` component boundaries. Set up the `shadcn/ui` integration.
-
-**Validation Commands:**
-- `pnpm run build`
-- `pnpm run lint`
-
-### **🛑 User Review Checkpoint**
-Pause here. Awaiting review to begin Phase 3.
-
----
-
-## **Phase 3: Backend Integration**
-
-**Goal:** Implement the Neon DB connection (`raw sql init` and Drizzle schema from `techstack.md`), the core `/api/rpc` serverless endpoint from `modules.md`, and Auth.js. Connect your UI components to these live endpoints. Hydrate public pages via Handlebars templates.
-
-**Validation Commands:**
-- `pnpm run build`
-- `pnpm run lint`
-
-### **🛑 User Review Checkpoint**
-System ready for E2E testing. Awaiting next instructions.
+*Stay focused, keep it lean, and build it fabulous.*

@@ -1,6 +1,4 @@
-# MERPATI-CMS — Product Requirements Document
-
-**MERPATI** — *Media Editorial Ringkas, Praktis, Aman, Tetap Independen*
+# MERPATI — Media Editorial Ringkas, Praktis, Aman, Tetap Independen
 
 > *"Kebebasan pers dimulai dari kemandirian infrastrukturnya."*
 
@@ -11,63 +9,62 @@
 | Field | Value |
 |---|---|
 | **Project Type** | Greenfield |
-| **Constraints** | Vercel Free Tier, Neon DB free tier, Vercel Blob free tier |
-| **Target Users** | Indonesian journalists familiar with WordPress |
-| **Business Goal** | Free CMS for journalists. |
+| **Existing Assets** | None |
+| **Constraints** | Vercel Free Tier (Single Endpoint Serverless Function) |
+| **Target Users** | Digital publishers and journalists seeking a modern, zero-cost WordPress alternative |
 
 ---
 
 ## The Story (The Pain)
 
-Indonesian journalists need a familiar writing platform like WordPress. But WordPress hosting is expensive. **MERPATI-CMS** solves this with a serverless architecture that runs for free on Vercel Free Tier, giving the WordPress feel without the server cost.
+Publishers and journalists are accustomed to the intuitive UI/UX of WordPress, but its legacy architecture and hosting costs can be burdensome. **MERPATI** resolves this by delivering a familiar, rich publishing experience powered by a modern, serverless backend. It is designed to deploy entirely on Vercel's Free Tier using a *single endpoint serverless function*, eradicating hosting costs while drastically improving performance and security.
 
 ---
 
 ## Core Features (NO CAPES!)
 
-1. **📝 Classic Editor**: WP-style editor (Bold, Italic, lists, headings, media insert). HTML toggle, autosave.
-2. **📋 Post Management**: Draft, Published, Trash. Quick actions, bulk actions, search, filter, pagination.
-3. **🏷️ Categories & Tags**: Hierarchical categories, flat tags.
-4. **📄 Pages**: Static pages with the same editor, hierarchical.
-5. **📷 Media Library**: Upload to Vercel Blob. Grid view, image metadata, copy URL. 
-6. **🎨 Theme System**: File-based themes with child-theme fallback inheritance.
-7. **👤 User Management (Invite-Only)**: Google OAuth only. First login = Super User. Super User invites others. Roles: `super_user`, `user`. All can publish.
-8. **⚙️ Settings**: Site title, logo, pagination limit, active theme.
-9. **🔧 Dashboard**: Quick draft, recent posts, counts.
-10. **🔔 Telegram Notifications**: Push notifications to a configured channel on user join and post publish.
-11. **🔗 Share & SEO Engine**: Open Graph, Twitter Cards, `NewsArticle` JSON-LD, Sitemap (`/sitemap.xml`, `/news-sitemap.xml`), RSS Feed.
+1. **📝 Classic Editor**: A familiar, WordPress-style editor supporting bold, italic, lists, headings, and media insertion. Includes HTML toggle and autosave functionality. *(Note: No comment system—focus entirely on modern publishing).*
+2. **📷 Media Library**: Direct upload integration with Vercel Blob or input via public image URLs. Features a grid view, image metadata extraction, and quick "copy URL" action.
+3. **🎨 Modular Theme System (RSC)**: React Server Components natively integrated into an isolated `/themes` directory. Offers maximum Vercel Serverless performance and security while allowing designers to build freely using Tailwind CSS v4. Active theme is determined via build-time environment variables.
+4. **👤 User Management (Invite-Only)**: Strictly Google OAuth 2.0. The very first user to log in automatically becomes the `Super User`. The Super User can invite others. Roles are simplified to `super_user` and `user`. All authenticated users have publishing rights.
+5. **🔔 Telegram Notifications**: Automated push notifications sent to a configured Telegram channel whenever a new user joins or a new post is published.
+6. **🔗 Share & SEO Engine**: Out-of-the-box technical SEO including Open Graph, Twitter Cards, `NewsArticle` JSON-LD, Sitemap generation (`/sitemap.xml`, `/news-sitemap.xml`), and RSS Feed.
+7. **🧭 Navigation Menus**: Drag-and-drop menu management allowing custom links and assignments to specific theme locations (e.g., Main Menu, Footer Menu).
 
 ---
 
-## Role Permissions
+## Base Features (CRUD Details)
 
-| Permission | Super User | User |
-|---|---|---|
-| Write, edit & publish own posts | ✅ | ✅ |
-| Manage media (own) | ✅ | ✅ |
-| Edit/Delete all posts & pages | ✅ | ❌ |
-| Manage taxonomies, themes, settings | ✅ | ❌ |
-| Invite users & manage roles | ✅ | ❌ |
+- **Posts**: Create, Read, Update, Delete posts. Status management (Draft/Published).
+- **Taxonomies**: Tag and category management.
+- **Pages**: Static page management using the Classic Editor.
+- **Settings**: Global configuration (Title, Tagline, Telegram API) and a dynamic, reorderable Contact Links list.
+- **Menus**: Custom navigation structures connecting to URLs, Posts, Pages, or Categories.
 
 ---
 
-## Initialization Flow
-*Self-initializes on the first run (no CLI DB migrations).*
-1. If DB is empty, run `init.sql` to create tables and enums.
-2. Seed default categories, tags, settings, welcome post, and page.
-3. First user to login via Google becomes Super User.
+## User Flow
+
+### Initialization Flow
+*The system self-initializes on the first run, completely bypassing CLI DB migrations.*
+1. **Bootstrap**: If the database is empty, automatically execute `init.sql` to scaffold the necessary tables.
+2. **Super User Claim**: The first person to authenticate via Google OAuth is permanently assigned the `Super User` role.
+3. **Seed Content**: Execute `seed.sql` to populate the database with default categories, tags, settings, a welcome post, and a welcome page. Ensure the seeded content highlights the theme: *"Media Editorial Ringkas, Praktis, Aman, Tetap Independen"*, and is assigned to the Super User.
 
 ---
 
 ## Non-Functional Requirements
-- **Performance**: Admin < 500ms response (SPA-like), Public < 200ms (ISR cached).
-- **Security**: Google OAuth 2.0 (JWT), DOMPurify sanitization.
-- **Scalability**: Serverless auto-scaling on Vercel Edge.
+
+- **Performance**: Admin interface must respond in **< 500ms** (SPA-like feel). Public-facing pages must respond in **< 200ms** utilizing ISR (Incremental Static Regeneration) caching.
+- **Security**: Strict Google OAuth 2.0 (JWT) for authentication. Mandatory DOMPurify sanitization on all raw HTML inputs to prevent XSS.
+- **Scalability**: Serverless architecture optimized for edge delivery and single-endpoint execution.
+- **UI Architecture**: Admin interface built with **Tailwind CSS v4** and **shadcn/ui**. Public-facing frontend relies on **React Server Components (RSC)** stored in an isolated `/themes` directory using pure Tailwind CSS v4 (no component library dependencies) for maximum performance and caching synergy.
+
+---
 
 ## Success Criteria
-- Full admin CRUD operational.
-- Google OAuth invite-only login.
-- File-based child themes work.
-- Valid RSS, Google News JSON-LD, and Open Graph previews.
-- $0/month on Vercel Free Tier.
-- WordPress-familiar UI.
+
+- [ ] Successfully deploys to Vercel Free Tier as a single endpoint function.
+- [ ] Admin interface feels instantly familiar to WordPress users.
+- [ ] Zero-touch initialization works flawlessly on the first run with relevant seed content.
+- [ ] Both performance targets (< 500ms admin, < 200ms public) are met consistently.
