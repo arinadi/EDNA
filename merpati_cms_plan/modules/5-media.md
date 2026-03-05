@@ -5,7 +5,7 @@ Provide an interface for uploading and managing media (images). Media should be 
 
 ## UI Structure
 *   **Media Gallery (`/admin/media`):**
-    *   A grid view of image thumbnails.
+    *   A grid view of image thumbnails (adaptive columns: 2 on mobile, scaling up for desktop).
     *   A prominent upload zone (drag and drop or file select).
     *   Clicking an image opens a dialog showing details (Filename, Size, Dimensions, Upload Date) and a "Copy URL" button.
 *   **Editor Media Modal:**

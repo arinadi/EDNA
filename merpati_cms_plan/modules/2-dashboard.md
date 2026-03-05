@@ -5,7 +5,7 @@ Build out the admin interface shell using `shadcn/ui` and implement the invite-o
 
 ## UI Structure
 *   **Admin Layout Shell (`/admin`):**
-    *   **Sidebar:** Navigation links (Dashboard, Posts, Pages, Media, Users, Settings). Must be collapsible and responsive on mobile.
+    *   **Sidebar:** Navigation links (Dashboard, Posts, Pages, Media, Users, Settings). Must follow a **mobile-first** approach, using a sheet/overlay for mobile and expanding to a sidebar on desktop.
     *   **Top Header:** Breadcrumbs, current date/time, and a User Profile dropdown (Logout, Settings).
 *   **Users Management (`/admin/users`):**
     *   Data table listing existing users (Name, Email, Role, Joined Date).
@@ -20,5 +20,5 @@ Build out the admin interface shell using `shadcn/ui` and implement the invite-o
 *   **RBAC Utility:** Provide a `checkRole(allowedRoles)` helper function to restrict UI and Actions.
 
 ## Technical Implementation
-*   **Components:** Leverage `shadcn/ui` for `Sidebar` (or custom responsive nav), `Table`, `Dialog`, `DropdownMenu`, `Button`, `Input`.
+*   **Components:** Leverage `shadcn/ui` for `Sidebar` (Sheet-based for mobile-first), `Table`, `Dialog`, `DropdownMenu`, `Button`, `Input`.
 *   **Validation:** Use Zod for form validation on the invite email.

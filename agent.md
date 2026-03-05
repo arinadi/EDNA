@@ -82,6 +82,7 @@ Before proceeding to Phase 2, the PRD **must** be reviewed and approved by the u
 
 1. **Global Tech Stack:** Define the global technologies used across all modules so they don't need to be repeated (e.g., "Database: Supabase", "Framework: Next.js", "Styling: Tailwind CSS").
 2. **Global Design Rules:** Define the overarching visual constraints, including:
+   * **Mobile-First Philosophy:** Always enforce a mobile-first design approach for multiplatform projects (web and mobile apps) because the vast majority of users are on mobile.
    * Color palette (Primary, Accent, Semantic).
    * Typography and type scale.
    * General layout and responsiveness rules.
