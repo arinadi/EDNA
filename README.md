@@ -36,10 +36,10 @@ EDNA guides you through a structured **5-phase workflow** to go from raw idea to
 | Phase | Name | Output |
 |:-----:|------|--------|
 | **0** | Project Context | Landscape assessment — greenfield, extension, or rewrite |
-| **1** | Requirement Discovery | `PRD.md` — Product Requirements Document |
-| **2** | Descriptive Design | `design.md` — Layout, data mapping, visual language |
-| **3** | Technical Blueprint | `techstack.md` — Architecture, stack, security, testing |
-| **4** | Implementation Plan | `tasks.md` — Prioritized, dependency-mapped task checklist |
+| **1** | Requirement Discovery & PRD Generation | `PRD.md` — Product Requirements Document |
+| **2** | Global Architecture & Module Orchestration | `modules.md` — Global tech stack, design rules, and module dependencies |
+| **3** | Granular Module Specification | `modules/` — Folder containing specific module instructions |
+| **4** | Agent Prompt (Iterative Agentic Coding) | `agent_prompt.md` — Execution prompt for AI Coding Agent |
 
 Every phase ends with a **✅ Review Checkpoint** — EDNA never barrels ahead without approval.
 
@@ -49,16 +49,19 @@ Every phase ends with a **✅ Review Checkpoint** — EDNA never barrels ahead w
 
 Every project produces an organized planning folder:
 
-```
+```text
 [project]_plan/
-├── PRD.md               # Product Requirements Document
-├── design.md            # Descriptive Design & Data Mapping
-├── techstack.md         # Technical Blueprint & Tech Stack
-├── tasks.md             # Implementation Plan & Task Checklist
+├── PRD.md                      # Phase 1 — Product Requirements Document
+├── modules.md                  # Phase 2 — List of required modules, dependencies, plus Global Tech Stack & Design Rules
+├── modules/                    # Phase 3 — Folder containing specific module instructions
+│   ├── 0-setup.md              # Combined Design, UI, API, Blueprint, and Tech Stack for specific module (Setup)
+│   ├── 1-auth.md               # Other specific modules...
+│   └── ...                     # Divided into X modules (starting from 0-setup), pausing after each.
+├── agent_prompt.md             # Phase 4 — Agent Prompt for Agentic Coding
 └── reference/
-    ├── api_*.md          # API documentation
-    ├── lib_*.md          # Library documentation
-    └── ...
+    ├── api_[service_name].md   # API documentation (endpoints, auth, rate limits)
+    ├── lib_[library_name].md   # Library docs (usage, config, gotchas)
+    └── ...                     # Additional reference materials as needed
 ```
 
 ---
