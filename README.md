@@ -13,6 +13,7 @@
   <img src="https://img.shields.io/badge/phase-0%20to%204-amber?style=flat-square" alt="Phases" />
   <img src="https://img.shields.io/badge/capes-NONE-red?style=flat-square" alt="No Capes" />
   <img src="https://img.shields.io/badge/status-fabulous-blueviolet?style=flat-square" alt="Status" />
+  <img src="https://img.shields.io/badge/agentic-production--grade-brightgreen?style=flat-square" alt="Agentic" />
 </p>
 
 ---
@@ -35,13 +36,13 @@ EDNA guides you through a structured **5-phase workflow** to go from raw idea to
 
 | Phase | Name | Output |
 |:-----:|------|--------|
-| **0** | Project Context | Landscape assessment — greenfield, extension, or rewrite |
+| **0** | Project Context | Landscape assessment, project mode selection (web-app, mobile, cli, data-pipeline, ml-service) |
 | **1** | Requirement Discovery & PRD Generation | `PRD.md` — Product Requirements Document |
-| **2** | Global Architecture & Module Orchestration | `modules.md` — Global tech stack, design rules, and module dependencies |
-| **3** | Granular Module Specification | `modules/` — Folder containing specific module instructions |
-| **4** | Agent Prompt (Iterative Agentic Coding) | `agent_prompt.md` — Execution prompt for AI Coding Agent |
+| **2** | Global Architecture & Module Orchestration | `modules.md` — Global tech stack, design rules, storage-agnostic data model, and module dependencies |
+| **3** | Granular Module Specification | `modules/` — Self-contained specs with complexity estimates, binary acceptance criteria, and testing blueprints |
+| **4** | Agent Prompt (Iterative Agentic Coding) | `agent_prompt.md` — Battle-ready execution prompt with failure recovery, self-reflection, and evaluation loops |
 
-Every phase ends with a **✅ Review Checkpoint** — EDNA never barrels ahead without approval.
+Every phase ends with a **✅ Completion Criteria Checklist** — EDNA never barrels ahead without approval.
 
 ---
 
@@ -52,17 +53,37 @@ Every project produces an organized planning folder:
 ```text
 [project]_plan/
 ├── PRD.md                      # Phase 1 — Product Requirements Document
-├── modules.md                  # Phase 2 — List of required modules, dependencies, plus Global Tech Stack & Design Rules
-├── modules/                    # Phase 3 — Folder containing specific module instructions
-│   ├── 0-setup.md              # Combined Design, UI, API, Blueprint, and Tech Stack for specific module (Setup)
-│   ├── 1-auth.md               # Other specific modules...
-│   └── ...                     # Divided into X modules (starting from 0-setup), pausing after each.
+├── modules.md                  # Phase 2 — Global Tech Stack, Design Rules, Data Model & Module Orchestration
+├── modules/                    # Phase 3 — Self-contained module specs
+│   ├── 0-setup.md
+│   ├── 1-auth.md
+│   └── ...
 ├── agent_prompt.md             # Phase 4 — Agent Prompt for Agentic Coding
-└── reference/
-    ├── api_[service_name].md   # API documentation (endpoints, auth, rate limits)
-    ├── lib_[library_name].md   # Library docs (usage, config, gotchas)
-    └── ...                     # Additional reference materials as needed
+├── reference/
+│   ├── api_[service_name].md   # API docs (endpoints, auth, rate limits)
+│   ├── lib_[library_name].md   # Library docs (usage, config, gotchas)
+│   └── ...
+├── progress.json               # Runtime — Recovery state (last completed module)
+├── execution_log.md            # Runtime — Operational log per module
+└── decisions.md                # Runtime — Architectural Decision Records (ADR)
 ```
+
+---
+
+## Agentic Features
+
+| Feature | Description |
+|---------|-------------|
+| **Failure Protocol** | Max 3 fix attempts → `git revert` rollback → never proceed broken |
+| **Recovery State** | `progress.json` enables resume after crash or session break |
+| **Self-Reflection** | Post-module security, duplication, and performance review |
+| **Evaluation Loop** | Architecture health check every 3 modules |
+| **Acceptance Gate** | Binary pass/fail criteria + automated security scanning |
+| **Token Budget** | Auto-compress at >80k tokens, on-demand re-fetch |
+| **Context Amnesia Prevention** | Review codebase before each new module |
+| **Plan Immutability** | Planning docs are read-only during execution |
+| **Cape Negotiation** | Technical alternatives for questionable features |
+| **Cross-Module Risk** | Dependency risk chain analysis |
 
 ---
 
@@ -73,8 +94,8 @@ Every project produces an organized planning folder:
 | **No Capes** | *"NO CAPES! No useless features!"* |
 | **Be Direct** | *"Yes, words are useless! Gobble-gobble-gobble! Too much of it, dahling!"* |
 | **Precision** | Every pixel and every data point must have a purpose. |
-| **Prepared** | *"Luck favors the prepared."* |
-| **Forward** | *"I never look back, dahling! It distracts from the now."* |
+| **Visual over Verbal** | If it exceeds 3 steps, use a Mermaid diagram. |
+| **Differentiation** | *"A little bit different is better than a little bit better."* |
 | **Excellence** | Make it look like a billion-dollar blueprint. |
 
 ---
@@ -97,7 +118,7 @@ No magic phrase needed. Just tell EDNA your problem:
 
 | File | Description |
 |------|-------------|
-| [`agent.md`](agent.md) | Agent EDNA prompt — persona, phases, folder structure |
+| [`agent.md`](agent.md) | Agent EDNA prompt — persona, phases, agentic features |
 | [`README.md`](README.md) | You are here, dahling |
 
 ---
