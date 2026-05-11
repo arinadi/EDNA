@@ -1,37 +1,38 @@
 # How It Works: Agent EDNA
-## *Framework for High-Quality Software Context Engineering*
+## *Technical Deep Dive into Software Context Engineering*
 
 ---
 
-### 1. The Problem: "Messy Context" 🌪️
-*   **The Problem:** LLMs need accurate context to work well, but they have a limited **Context Window**.
-*   **The Technical Challenge:** Large projects exceed these limits. Too much data or bad compression causes **"Context Amnesia,"** leading to AI **Hallucinations**.
-*   **The Results:** Bloated features ("capes") and broken code because the AI loses track of the big picture.
-*   **The Solution:** **Agent EDNA.** She organizes the project *before* coding. By breaking tasks into small, clear modules, she keeps the AI accurate.
+### 1. The Engineering Crisis: Token Entropy & Context Loss 🌪️
+Standard LLM interactions suffer from **Token Entropy**. As project size increases, the relevance of provided context degrades.
+
+*   **The Context Window Barrier:** LLMs have fixed limits. Even with large windows (e.g., 128k+), accuracy drops as the window fills—a phenomenon known as **"Lost in the Middle."**
+*   **Context Amnesia:** In long-running projects, models lose track of early architectural constraints. This leads to **Hallucinations** where the AI proposes solutions that conflict with established patterns.
+*   **The EDNA Solution:** We treat context as a first-class engineering object. By enforcing a modular, read-only plan structure, we keep the model focused on a narrow, high-fidelity subset of the project at any given time.
 
 ---
 
-### 2. Why "EDNA"? 👓
-The **Edna Mode** persona represents three engineering principles:
-1.  **Top Quality:** No "good enough" shortcuts.
-2.  **No Capes:** Remove useless features (bloat) that slow down the project.
-3.  **Visual First:** If logic is too complex to see, it's too complex to build safely.
+### 2. The Architectural Strategy: Phases 0-4 🏛️
+
+#### **Phase 0 & 1: Precision Discovery**
+Instead of guessing, EDNA uses **"Interrogative Prompting"** to extract latent requirements. The resulting `PRD.md` acts as the project’s "Source of Truth," preventing scope creep.
+
+#### **Phase 2: Global Orchestration (The Master Blueprint)**
+*   **Storage-Agnostic Modeling:** Data entities are defined by relationships and field types *before* selecting a database (SQL vs NoSQL). This prevents early-stage technical debt.
+*   **Risk Chain Mapping:** We identify modules where failure causes cascading breaks (e.g., a change in Auth breaking Payments).
+
+#### **Phase 3: Granular Specification**
+Modules are limited to **~20 files** to ensure they fit within the high-accuracy "sweet spot" of the LLM’s context window. Each spec includes **Binary Pass/Fail Criteria**—removing the ambiguity of "done."
+
+#### **Phase 4: Execution Loop (The Implementation Engine)**
+EDNA generates an `agent_prompt.md` that governs the implementation agent. It enforces:
+*   **Context Awareness:** Mandatory review of prior modules to ensure code reuse.
+*   **Acceptance Gates:** Automated linting, type-checking, and security scans (blocking on HIGH severity findings).
 
 ---
 
-### 3. The 5 Phases 🏛️
-EDNA follows a linear path to ensure a solid build:
-
-1.  **Phase 0: Project Context:** Checking tech stack and project type.
-2.  **Phase 1: Discovery & PRD:** Writing a clear Product Requirements Document (PRD).
-3.  **Phase 2: Global Architecture:** Setting up the data model, tech, and module plan.
-4.  **Phase 3: Granular Specs:** Creating module specs with clear pass/fail tests.
-5.  **Phase 4: Agentic Execution:** Using a strong prompt for the AI to start coding.
-
----
-
-### 4. The Agentic Lifecycle 🔄
-*Collaboration between User, Architect (EDNA), and the Coding Agent.*
+### 3. The Agentic Lifecycle 🔄
+*Collaboration flow between User, Architect (EDNA), and the Implementation Agent.*
 
 ```mermaid
 sequenceDiagram
@@ -82,14 +83,23 @@ sequenceDiagram
 
 ---
 
-### 5. Technical Advantages 🏆
-*   **Resilience:** State is saved in `progress.json`. You can resume anytime.
-*   **Traceability:** Every decision is logged in `decisions.md` (ADR format).
-*   **Clear Validation:** Testing uses pass/fail checks to remove doubt.
+### 4. Technical Safeguards & State Management 🛡️
+
+*   **Resilience (State Persistence):** `progress.json` tracks the `last_completed` module. If the session crashes, the agent resumes implementation from the exact point of failure without re-reading the entire history.
+*   **Institutional Memory (ADRs):** Significant technical choices are logged in `decisions.md` using the **Architectural Decision Record** format. This provides the "Why" behind the "What," preventing future agents from reverting intentional designs.
+*   **Token Budgeting (Context Compression):** When context exceeds **80k tokens**, EDNA automatically compresses history. Older modules are summarized into a 3-field object `{module, files, exports}`, keeping the current module in full fidelity.
+*   **Failure Protocol:** A strict 3-attempt limit for bug fixes. If the agent cannot resolve a task, it must `git revert` to the last known-good state. **We never proceed with a broken build.**
 
 ---
 
-### 🛠️ Core Principles
-*   **Context is Foundation.**
-*   **Structure is Security.**
-*   **No Capes (No Bloat).**
+### 5. Why It Works: The "No Capes" Principle ✂️
+The core of EDNA's success is the **Elimination of Feature Bloat**. 
+*   **Constraint-First Engineering:** By defining non-functional requirements (NFRs) like "Page load < 2s" upfront, we prevent the addition of heavy libraries or unnecessary abstractions.
+*   **Binary Validation:** A task is only "Done" when the automated test suite and the binary criteria in the spec are both satisfied. No "maybe," no partial completions.
+
+---
+
+### 🛠️ Strategic Directives
+*   **Precision is the Foundation.**
+*   **Modularity is the Security.**
+*   **Blueprint Immutability during Execution.**
