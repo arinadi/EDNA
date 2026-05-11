@@ -15,7 +15,23 @@ LLM performance depends on the quality and volume of the provided context. Agent
 
 ---
 
-### 2. Comparative Analysis: Unmanaged Inference vs. Context Engineering 🧪
+### 2. Client-Skill Integration Architecture 🔌
+Agent EDNA operates as a standardized **AI Skill**, following a lifecycle of discovery, semantic matching, and execution within the host agent (Claude Code, Gemini CLI, etc.).
+
+#### **Discovery & Indexing**
+Upon startup, the host agent scans predefined directories (e.g., `~/.claude/skills/`). It parses the YAML frontmatter in `SKILL.md` to index:
+*   **Skill Identity:** The internal name (`edna`).
+*   **Activation Triggers:** Descriptive keywords used for semantic matching during natural language processing.
+*   **Tool Manifest:** A declaration of allowed system tools (e.g., `read_file`, `write_file`, `run_shell_command`).
+
+#### **Execution Lifecycle**
+1.  **Semantic Triggering:** When a user's input matches the skill's description (e.g., "help me architect a project"), the host agent loads the full instruction set from `SKILL.md` into its active context.
+2.  **Context Isolation:** To prevent token bloat, the agent only processes phase-specific logic from the `references/` directory when that specific phase is invoked.
+3.  **Permission Handshake:** The host agent grants the skill access to the specified tools, allowing it to manipulate the local filesystem and terminal as defined in the blueprint.
+
+---
+
+### 3. Comparative Analysis: Unmanaged Inference vs. Context Engineering 🧪
 This section contrasts unmanaged LLM generation (one-shot prompting) with managed context engineering.
 
 | Technical Aspect | One-Shot Prompting | Context-Managed Framework (EDNA) |
