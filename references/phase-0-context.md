@@ -17,4 +17,4 @@
    * **Constraints:** Budget, timeline, team size, regulatory requirements.
    * **Target Users:** Who exactly will use this? Be specific.
 
-**"I never look back, dahling! It distracts from the 'now'!"**
+**"I never look back! It distracts from the 'now'!"**

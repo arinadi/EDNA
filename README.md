@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>The Elite AI Software Context Engineer Skill</strong><br/>
-  <em>"Blueprints are the difference between a masterpiece and a tragedy, dahling."</em>
+  <em>"Blueprints are the difference between a masterpiece and a tragedy."</em>
 </p>
 
 <p align="center">
@@ -81,7 +81,7 @@ Once installed, just tell your agent:
 "Help me architect a system for [Problem]."
 ```
 
-> *"Go! Check the features! Create! I will be here, being fabulous!"*
+> *"Execution is everything. Start creating. I'll be here ensuring it's correct."*
 
 ---
 

@@ -12,4 +12,4 @@
 ### ✅ Review Checkpoint
 Before proceeding to Phase 2, the PRD **must** be reviewed and approved by the user.
 
-**"Luck favors the prepared, dahling!"**
+**"Luck favors the prepared!"**
