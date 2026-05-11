@@ -15,18 +15,16 @@ LLM performance depends on the quality and volume of the provided context. Agent
 
 ---
 
-### 2. Comparative Analysis: Naive Prompting vs. Context Engineering 🧪
-To understand the necessity of Agent EDNA, we must contrast it with standard "One-Shot" prompting.
+### 2. Comparative Analysis: Unmanaged Inference vs. Context Engineering 🧪
+This section contrasts unmanaged LLM generation (one-shot prompting) with managed context engineering.
 
-#### **Scenario:** *"Create a secure finance application with zero mistakes."*
-
-| Feature | Naive LLM Prompting | Agent EDNA (Context Engineering) |
+| Technical Aspect | One-Shot Prompting | Context-Managed Framework (EDNA) |
 |:--- |:--- |:--- |
-| **Input Processing** | Attempts to generate code directly from ambiguous natural language. | Uses **Interrogative Discovery** to identify latent requirements (Regulatory, Security, Scalability). |
-| **Logic Validation** | Relies on the model's internal probability to fill gaps, leading to **Hallucinated Logic**. | Enforces **Binary Pass/Fail Criteria** in Phase 3 specs, removing implementation ambiguity. |
-| **Architectural Integrity** | Mixes UI, Auth, and Logic in a single turn, increasing **Token Entropy**. | Uses **Feature-Driven Modularization** to isolate context and prevent "Dummy Debt." |
-| **Error Handling** | If a bug occurs, the model often "patches" it by introducing more complex, unverified code. | Uses a **3-Attempt Failure Protocol** with automatic **Git Rollback** to a verified state. |
-| **Final Output** | A monolithic, unverified codebase with high technical debt. | A structured, modular masterpiece with a complete **Audit Trail (ADR)**. |
+| **Input Analysis** | Direct code generation from natural language instructions. | Structured extraction of constraints (Regulatory, Security, Scalability) prior to coding. |
+| **Logic Verification** | Relies on model-internal probability for gap filling; prone to inconsistent logic. | Enforces **Binary Validation Criteria** within module specifications to ensure deterministic output. |
+| **Context Management** | Combines multiple layers (UI/Auth/Logic) in a single turn, increasing token entropy. | Uses **Feature-Driven Modularization** to maintain a low-entropy context window per task. |
+| **Recovery Strategy** | Heuristic patching of errors, which can propagate technical debt. | Implements a **3-Attempt Limit** followed by an automated **Git Rollback** to a verified state. |
+| **State Persistence** | Transient; depends on the immediate session history. | Persistent; uses `progress.json` and `decisions.md` (ADR) to maintain state across sessions. |
 
 ---
 
@@ -49,7 +47,7 @@ EDNA generates an `agent_prompt.md` that directs implementation. It enforces:
 
 ---
 
-### 3. Operational Workflow 🔄
+### 4. Operational Workflow 🔄
 
 ```mermaid
 sequenceDiagram
@@ -100,7 +98,7 @@ sequenceDiagram
 
 ---
 
-### 4. State Management & Reliability 🛡️
+### 5. State Management & Reliability 🛡️
 
 *   **Persistence:** `progress.json` stores the current state of the implementation loop. This allows the system to resume from the last successful module without re-processing the entire project history.
 *   **Decision Logging (ADR):** Technical decisions are recorded in `decisions.md` using the Architectural Decision Record format, providing a historical record of technical choices and their rationale.
@@ -109,7 +107,7 @@ sequenceDiagram
 
 ---
 
-### 5. Efficiency Principles ✂️
+### 6. Efficiency Principles ✂️
 
 *   **Minimalism:** Removal of unnecessary features ("capes") reduces technical debt and improves system maintainability.
 *   **Binary Validation:** Tasks are considered complete only when both automated tests and specific pass/fail criteria are met.
