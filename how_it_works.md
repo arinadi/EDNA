@@ -64,18 +64,16 @@ sequenceDiagram
     EDNA->>User: Request Final Blueprint Review
     User->>EDNA: Approve & Start Build
     
-    rect rgb(255, 255, 255)
-        Note right of Plan: Phase 4: Execution Loop
-        EDNA->>Coder: Pass Prompt + Context
-        Coder->>Plan: Read Current Module Spec
-        Coder->>Coder: Implement & Test
-        alt Success
-            Coder->>Plan: Update logs & state (progress.json)
-            Coder->>User: Request Module Review
-        else Failure (Max 3 attempts)
-            Coder->>Coder: Rollback (Git Revert)
-            Coder->>User: Report Error & Context
-        end
+    Note right of Plan: Phase 4: Execution Loop
+    EDNA->>Coder: Pass Prompt + Context
+    Coder->>Plan: Read Current Module Spec
+    Coder->>Coder: Implement & Test
+    alt Success
+        Coder->>Plan: Update logs & state (progress.json)
+        Coder->>User: Request Module Review
+    else Failure (Max 3 attempts)
+        Coder->>Coder: Rollback (Git Revert)
+        Coder->>User: Report Error & Context
     end
     
     User->>Coder: Approve Module
