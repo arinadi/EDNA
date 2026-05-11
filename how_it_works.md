@@ -1,38 +1,37 @@
 # How It Works: Agent EDNA
-## *Technical Deep Dive into Software Context Engineering*
+## *Technical Documentation: Software Context Engineering*
 
 ---
 
-### 1. The Engineering Crisis: Token Entropy & Context Loss 🌪️
-Standard LLM interactions suffer from **Token Entropy**. As project size increases, the relevance of provided context degrades.
+### 1. Context Window Management 🌪️
+LLM performance depends on the quality and volume of the provided context. Agent EDNA addresses specific technical constraints:
 
-*   **The Context Window Barrier:** LLMs have fixed limits. Even with large windows (e.g., 128k+), accuracy drops as the window fills—a phenomenon known as **"Lost in the Middle."**
-*   **Context Amnesia:** In long-running projects, models lose track of early architectural constraints. This leads to **Hallucinations** where the AI proposes solutions that conflict with established patterns.
-*   **The EDNA Solution:** We treat context as a first-class engineering object. By enforcing a modular, read-only plan structure, we keep the model focused on a narrow, high-fidelity subset of the project at any given time.
-
----
-
-### 2. The Architectural Strategy: Phases 0-4 🏛️
-
-#### **Phase 0 & 1: Precision Discovery**
-Instead of guessing, EDNA uses **"Interrogative Prompting"** to extract latent requirements. The resulting `PRD.md` acts as the project’s "Source of Truth," preventing scope creep.
-
-#### **Phase 2: Global Orchestration (The Master Blueprint)**
-*   **Storage-Agnostic Modeling:** Data entities are defined by relationships and field types *before* selecting a database (SQL vs NoSQL). This prevents early-stage technical debt.
-*   **Risk Chain Mapping:** We identify modules where failure causes cascading breaks (e.g., a change in Auth breaking Payments).
-
-#### **Phase 3: Granular Specification**
-Modules are limited to **~20 files** to ensure they fit within the high-accuracy "sweet spot" of the LLM’s context window. Each spec includes **Binary Pass/Fail Criteria**—removing the ambiguity of "done."
-
-#### **Phase 4: Execution Loop (The Implementation Engine)**
-EDNA generates an `agent_prompt.md` that governs the implementation agent. It enforces:
-*   **Context Awareness:** Mandatory review of prior modules to ensure code reuse.
-*   **Acceptance Gates:** Automated linting, type-checking, and security scans (blocking on HIGH severity findings).
+*   **Context Window Limitations:** LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the "Lost in the Middle" effect.
+*   **Accuracy and Hallucination:** In long-running development cycles, models can lose track of early architectural constraints. This results in hallucinations where the AI proposes code that conflicts with the established global state.
+*   **Modular Isolation:** EDNA manages context by enforcing a modular structure. By focusing the model on a single, self-contained module at a time, the framework maintains the active context within high-accuracy ranges.
 
 ---
 
-### 3. The Agentic Lifecycle 🔄
-*Collaboration flow between User, Architect (EDNA), and the Implementation Agent.*
+### 2. Implementation Phases 🏛️
+
+#### **Phase 0 & 1: Requirement Extraction**
+EDNA uses structured interrogation to extract requirements. The resulting `PRD.md` serves as the primary technical specification, establishing the scope before architecture begins.
+
+#### **Phase 2: Global Architecture**
+*   **Storage-Agnostic Modeling:** Data entities are defined by relationships and field types. Implementation details (SQL, NoSQL, etc.) are deferred to ensure the core logic remains decoupled from the storage layer.
+*   **Risk Analysis:** Identification of critical dependencies and potential cascading failures across the module graph.
+
+#### **Phase 3: Module Specification**
+Individual modules are defined with a limited scope (typically under 20 files). Each specification includes **Binary Pass/Fail Criteria** to provide objective validation during implementation.
+
+#### **Phase 4: Execution Loop**
+EDNA generates an `agent_prompt.md` that directs implementation. It enforces:
+*   **Dependency Review:** Mandatory analysis of existing modules to ensure architectural consistency.
+*   **Validation Gates:** Automated linting, type-checking, and security scans (blocking on critical vulnerabilities).
+
+---
+
+### 3. Operational Workflow 🔄
 
 ```mermaid
 sequenceDiagram
@@ -48,8 +47,8 @@ sequenceDiagram
     EDNA->>EDNA: Assess Landscape & Select Mode
     
     Note over EDNA: Phase 1: Requirements & PRD
-    EDNA->>User: Precision Interrogation (Q&A)
-    User->>EDNA: Detailed Requirements
+    EDNA->>User: Requirement Interrogation
+    User->>EDNA: Detailed Input
     EDNA->>Plan: Create PRD.md
     EDNA->>User: Request PRD Review
     User->>EDNA: Approve PRD
@@ -62,19 +61,19 @@ sequenceDiagram
     Note over EDNA: Phase 3: Granular Specs
     EDNA->>Plan: Populate reference/ & modules/ (Specs)
     
-    EDNA->>User: Request Final Blueprint Review
+    EDNA->>User: Request Final Plan Review
     User->>EDNA: Approve & Start Build
     
     Note right of Plan: Phase 4: Execution Loop
     EDNA->>Coder: Pass Prompt + Context
     Coder->>Plan: Read Current Module Spec
-    Coder->>Coder: Implement & Test
+    Coder->>Coder: Implement & Validate
     alt Success
         Coder->>Plan: Update logs & state (progress.json)
         Coder->>User: Request Module Review
     else Failure (Max 3 attempts)
         Coder->>Coder: Rollback (Git Revert)
-        Coder->>User: Report Error & Context
+        Coder->>User: Report Error State
     end
     
     User->>Coder: Approve Module
@@ -83,23 +82,24 @@ sequenceDiagram
 
 ---
 
-### 4. Technical Safeguards & State Management 🛡️
+### 4. State Management & Reliability 🛡️
 
-*   **Resilience (State Persistence):** `progress.json` tracks the `last_completed` module. If the session crashes, the agent resumes implementation from the exact point of failure without re-reading the entire history.
-*   **Institutional Memory (ADRs):** Significant technical choices are logged in `decisions.md` using the **Architectural Decision Record** format. This provides the "Why" behind the "What," preventing future agents from reverting intentional designs.
-*   **Context Management (Modularization):** By enforcing strict modularity, EDNA ensures that the coding agent only processes one small, self-contained module at a time. This keeps the active context well within the high-accuracy "sweet spot" of the LLM's memory, preventing the hallucinations that occur when a model is overwhelmed by a massive codebase.
-*   **Failure Protocol:** A strict 3-attempt limit for bug fixes. If the agent cannot resolve a task, it must `git revert` to the last known-good state. **We never proceed with a broken build.**
+*   **Persistence:** `progress.json` stores the current state of the implementation loop. This allows the system to resume from the last successful module without re-processing the entire project history.
+*   **Decision Logging (ADR):** Technical decisions are recorded in `decisions.md` using the Architectural Decision Record format, providing a historical record of technical choices and their rationale.
+*   **Modular Containment:** By strictly limiting the scope of each coding task, EDNA ensures that the active context remains within the model's most accurate memory range.
+*   **Error Handling:** A 3-attempt limit for automated fixes. Unresolved errors trigger a rollback to the last verified state, preventing the propagation of corrupted code.
 
 ---
 
-### 5. Why It Works: The "No Capes" Principle ✂️
-The core of EDNA's success is the **Elimination of Feature Bloat**. 
-*   **Constraint-First Engineering:** By defining non-functional requirements (NFRs) like "Page load < 2s" upfront, we prevent the addition of heavy libraries or unnecessary abstractions.
-*   **Binary Validation:** A task is only "Done" when the automated test suite and the binary criteria in the spec are both satisfied. No "maybe," no partial completions.
+### 5. Efficiency Principles ✂️
+
+*   **Minimalism:** Removal of unnecessary features ("capes") reduces technical debt and improves system maintainability.
+*   **Binary Validation:** Tasks are considered complete only when both automated tests and specific pass/fail criteria are met.
+*   **Immutability:** Project plans are read-only during the execution phase to prevent unauthorized architectural drift.
 
 ---
 
 ### 🛠️ Strategic Directives
-*   **Precision is the Foundation.**
-*   **Modularity is the Security.**
-*   **Blueprint Immutability during Execution.**
+*   **Precision in Requirements.**
+*   **Isolation via Modularity.**
+*   **Validation-Driven Finality.**
