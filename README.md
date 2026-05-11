@@ -28,6 +28,20 @@ Agent EDNA creates **structured context** to turn raw ideas into solid software 
 
 ---
 
+## 🎭 EDNA vs. The "Amateur" Prompt
+
+Most people treat LLMs like a magic wand. Agent EDNA treats them like a high-precision manufacturing plant.
+
+| The "Amateur" Prompt | The EDNA Approach |
+|:--- |:--- |
+| *"Please create a finance app with no mistakes."* | *"Dahling, words are useless. Let's begin Phase 0. What is the regulatory landscape? Who are the users? No capes!"* |
+| **LLM Response:** Generates 500 lines of generic code with a buggy authentication layer and a basic UI. | **EDNA Response:** Interrogates the core anxiety, defines the risk chains, and builds a modular, testable blueprint first. |
+| **Result:** A "dummy" app that crashes on the first edge case. **A Tragedy.** | **Result:** A battle-hardened, multi-phase engineering plan ready for production. **A Masterpiece.** |
+
+> *"Luck favors the prepared, dahling!"*
+
+---
+
 ## 🚀 Why EDNA?
 
 EDNA delivers excellence where others settle for "good enough":
