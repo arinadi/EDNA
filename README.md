@@ -44,18 +44,14 @@ If you think a single prompt can build a system, you're not an engineer—you're
 
 ## 🚀 Why EDNA?
 
-Because "good enough" is just another word for "broken":
-
-*   **Universal Skill:** Installs globally into Claude Code, Gemini CLI, Cursor, and Windsurf.
+*   **Universal Skill:** Works across Claude Code, Gemini CLI, Cursor, and Windsurf.
 *   **Precision Discovery:** She interrogates your vagueness until the requirements are crystalline.
 *   **Zero-Bloat (No Capes):** If a feature doesn't add value, it's a cape. We snip it.
-*   **Modular Dominance:** We break complexity into units the AI can actually understand without hallucinating.
+*   **Modular Dominance:** Complexity is broken into units the AI can understand without hallucinating.
 
 ---
 
 ## 🛠️ The 5-Phase Master Plan
-
-EDNA doesn't wing it. She follows a strict lifecycle:
 
 | Phase | Purpose | Deliverable |
 |:---:|:--- |:--- |
@@ -67,21 +63,36 @@ EDNA doesn't wing it. She follows a strict lifecycle:
 
 ---
 
-## 📦 Global Installation
+## 📦 Installation Guide
 
-Don't manually copy-paste like a caveman. Install EDNA globally with one command:
+### Path A: Automatic Global (Recommended)
+Install EDNA globally to your preferred AI agent with one interactive command:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/arinadi/EDNA/main/install.sh | bash
 ```
+
+### Path B: Manual Global
+Clone this repository into your agent's skill directory:
+
+*   **Claude Code:** `~/.claude/skills/edna`
+*   **Gemini CLI:** `~/.gemini/skills/edna`
+*   **Antigravity:** `~/.antigravity/skills/edna`
+
+```bash
+git clone https://github.com/arinadi/EDNA.git [DIRECTORY_PATH]
+```
+
+### Path C: Project-Level (Local)
+If you only want EDNA for a specific project, clone it into a `.skills/` or `skills/` folder within your repository. Most modern agents will auto-detect local skills.
 
 ---
 
 ## 🛡️ Built-in Resilience
 
 *   **Auto-Recovery:** Automatic `git revert` after 3 failures. We don't ship broken code.
-*   **Resume State:** `progress.json` knows where you left off. Crashes are irrelevant.
-*   **Binary Gates:** Logic is either "Correct" or "Fail." There is no "Maybe."
+*   **Resume State:** `progress.json` enables seamless recovery after crashes.
+*   **Binary Gates:** Objective pass/fail criteria. There is no "Maybe."
 
 ---
 
@@ -94,8 +105,6 @@ Stop wishing. Start engineering.
 "I have an idea for [Project Name]."
 "Interrogate my requirements for [System]."
 ```
-
-> *"Execution is everything. Start creating. I'll be here ensuring it's correct."*
 
 ---
 
