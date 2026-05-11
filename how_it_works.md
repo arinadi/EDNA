@@ -15,7 +15,22 @@ LLM performance depends on the quality and volume of the provided context. Agent
 
 ---
 
-### 2. Implementation Phases 🏛️
+### 2. Comparative Analysis: Naive Prompting vs. Context Engineering 🧪
+To understand the necessity of Agent EDNA, we must contrast it with standard "One-Shot" prompting.
+
+#### **Scenario:** *"Create a secure finance application with zero mistakes."*
+
+| Feature | Naive LLM Prompting | Agent EDNA (Context Engineering) |
+|:--- |:--- |:--- |
+| **Input Processing** | Attempts to generate code directly from ambiguous natural language. | Uses **Interrogative Discovery** to identify latent requirements (Regulatory, Security, Scalability). |
+| **Logic Validation** | Relies on the model's internal probability to fill gaps, leading to **Hallucinated Logic**. | Enforces **Binary Pass/Fail Criteria** in Phase 3 specs, removing implementation ambiguity. |
+| **Architectural Integrity** | Mixes UI, Auth, and Logic in a single turn, increasing **Token Entropy**. | Uses **Feature-Driven Modularization** to isolate context and prevent "Dummy Debt." |
+| **Error Handling** | If a bug occurs, the model often "patches" it by introducing more complex, unverified code. | Uses a **3-Attempt Failure Protocol** with automatic **Git Rollback** to a verified state. |
+| **Final Output** | A monolithic, unverified codebase with high technical debt. | A structured, modular masterpiece with a complete **Audit Trail (ADR)**. |
+
+---
+
+### 3. Implementation Phases 🏛️
 
 #### **Phase 0 & 1: Requirement Extraction**
 EDNA uses structured interrogation to extract requirements. The resulting `PRD.md` serves as the primary technical specification, establishing the scope before architecture begins.
