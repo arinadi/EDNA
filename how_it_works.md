@@ -64,7 +64,7 @@ sequenceDiagram
     EDNA->>User: Request Final Blueprint Review
     User->>EDNA: Approve & Start Build
     
-    rect rgb(240, 240, 240)
+    rect rgb(255, 255, 255)
         Note right of Plan: Phase 4: Execution Loop
         EDNA->>Coder: Pass Prompt + Context
         Coder->>Plan: Read Current Module Spec
