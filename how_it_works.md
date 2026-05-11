@@ -38,31 +38,31 @@ sequenceDiagram
     autonumber
     actor User
     participant EDNA as Agent EDNA (Architect)
-    participant Plan as Plan Folder (Context)
+    participant Plan as Project Plan (Context)
     participant Coder as Coding Agent (Builder)
 
-    User->>EDNA: Present Project Idea
-    Note over EDNA: Phase 0-3: Research & Blueprinting
-    EDNA->>Plan: Generate PRD, Architecture, & Specs
-    EDNA->>User: Request Blueprint Approval
+    User->>EDNA: Provide Idea
+    Note over EDNA: Phases 0-3: Research & Design
+    EDNA->>Plan: Create PRD, Architecture, & Specs
+    EDNA->>User: Request Approval
     User->>EDNA: Approve & Start Build
     
     rect rgb(240, 240, 240)
         Note right of Plan: Phase 4: Execution Loop
-        EDNA->>Coder: Provide Agent Prompt + Plan Context
-        Coder->>Plan: Read Current Module Spec
-        Coder->>Coder: Implement & Test
+        EDNA->>Coder: Pass Prompt + Context
+        Coder->>Plan: Read Module Spec
+        Coder->>Coder: Code & Test
         alt Success
-            Coder->>Plan: Update progress.json & logs
-            Coder->>User: Request Module Review
+            Coder->>Plan: Update logs & state
+            Coder->>User: Request Review
         else Failure (Max 3)
-            Coder->>Coder: Automatic Git Revert
-            Coder->>User: Report Failure
+            Coder->>Coder: Rollback (Git Revert)
+            Coder->>User: Report Error
         end
     end
     
     User->>Coder: Approve Module
-    Coder->>Plan: Move to Next Module
+    Coder->>Plan: Start Next Module
 ```
 
 ---
