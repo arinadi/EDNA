@@ -1,0 +1,11 @@
+# Agent EDNA - Ignored Example Plans
+HotBell_Radio_plan/
+jira_logwork_plan/
+mei_hatsume_plan/
+merpati_cms_plan/
+
+# Common ignores
+.DS_Store
+node_modules/
+.env
+*.log
