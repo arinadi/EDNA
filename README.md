@@ -5,8 +5,8 @@
 <h1 align="center">Agent EDNA</h1>
 
 <p align="center">
-  <strong>The World's Most Elite Software Context Engineer</strong><br/>
-  <em>"Blueprints aren't just plans, dahling. They are the difference between a masterpiece and a tragedy."</em>
+  <strong>Elite Software Context Engineer</strong><br/>
+  <em>"Blueprints are the difference between a masterpiece and a tragedy, dahling."</em>
 </p>
 
 <p align="center">
@@ -20,9 +20,9 @@
 
 ## 💎 The EDNA Manifesto
 
-Messy ideas are common. **Elite execution is rare.**
+Ideas are easy. **Execution is hard.**
 
-Agent EDNA doesn't just "generate code." She engineers **high-fidelity context** that transforms raw concepts into sleek, battle-hardened software blueprints. Inspired by the legendary Edna Mode, she demands precision, eliminates bloat, and has an absolute, non-negotiable rule: **NO CAPES.**
+Agent EDNA creates **structured context** to turn raw ideas into solid software blueprints. Inspired by Edna Mode, she demands precision and eliminates bloat. One rule: **NO CAPES.**
 
 > *"I never look back, dahling! It distracts from the now."*
 
@@ -30,48 +30,48 @@ Agent EDNA doesn't just "generate code." She engineers **high-fidelity context**
 
 ## 🚀 Why EDNA?
 
-While others settle for "good enough," EDNA delivers the **fabulous**:
+EDNA delivers excellence where others settle for "good enough":
 
-*   **Precision Interrogation:** She doesn't guess your requirements; she extracts them with surgical accuracy.
-*   **Zero-Bloat Architecture:** Every feature must earn its place. If it doesn't add value, it’s a cape. **Snip, snip!**
-*   **Agentic Resilience:** Built-in failure protocols, recovery states, and self-reflection loops. She doesn't just run; she survives.
-*   **Visual Dominance:** Logic that exceeds three steps is visualized. If you can't see it, you don't understand it.
+*   **Exact Requirements:** She extracts clear requirements with no guessing.
+*   **Zero-Bloat:** Every feature must add value. No useless "capes."
+*   **Smart Execution:** Built-in error handling, recovery, and self-review.
+*   **Visual Logic:** If logic is complex, she visualizes it. If you can't see it, you can't build it.
 
 ---
 
-## 🛠️ The 5-Phase Masterstroke
+## 🛠️ The 5-Phase Plan
 
-EDNA guides your project through a rigorous lifecycle designed for total success:
+EDNA guides your project through a strict lifecycle for total success:
 
 | Phase | Purpose | Deliverable |
 |:---:|:--- |:--- |
-| **0** | **Foundation** | Landscape assessment & project mode selection. |
-| **1** | **Discovery** | `PRD.md` — The Product Requirements Document. |
-| **2** | **Orchestration** | `modules.md` — Global architecture & master data model. |
-| **3** | **Specification** | `modules/` — Granular, self-contained implementation specs. |
-| **4** | **Execution** | `agent_prompt.md` — The battle-ready prompt for agentic coding. |
+| **0** | **Foundation** | Tech stack & project type selection. |
+| **1** | **Discovery** | `PRD.md` — Product Requirements Document. |
+| **2** | **Orchestration** | `modules.md` — Global architecture & data model. |
+| **3** | **Specification** | `modules/` — Clear, testable module specs. |
+| **4** | **Execution** | `agent_prompt.md` — The prompt for AI coding. |
 
 ---
 
-## 🛡️ Agentic Armor
+## 🛡️ Built-in Safety
 
-EDNA’s blueprints are equipped with professional-grade safety features:
+EDNA’s blueprints include professional safety features:
 
-*   **Failure Protocol:** Automatic `git revert` after 3 failed attempts. Never ship broken logic.
-*   **Recovery State:** `progress.json` allows seamless resume after session breaks.
-*   **Self-Reflection:** Automated post-module reviews for security, duplication, and performance.
-*   **Acceptance Gates:** Binary pass/fail criteria. No "maybe," only "done."
+*   **Auto-Recovery:** Automatic `git revert` after 3 failures. No broken code.
+*   **Resume State:** `progress.json` allows resuming after session breaks.
+*   **Self-Review:** Automated checks for security and performance.
+*   **Clear Gates:** Binary pass/fail criteria. No "maybe," only "done."
 
 ---
 
-## 💋 How to Begin
+## 💋 How to Start
 
-Dahling, don't waste time with pleasantries. Just tell me the problem:
+Tell me your problem directly:
 
 ```text
-"EDNA, I have a vision for a [Project Name]."
+"EDNA, I have a vision for [Project Name]."
 "Let's build a [Revolutionary App]."
-"I need a system that solves [The Impossible]."
+"I need a system to solve [Problem]."
 ```
 
 > *"Go! Check the features! Create! I will be here, being fabulous!"*

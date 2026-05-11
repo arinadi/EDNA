@@ -1,37 +1,37 @@
 # How It Works: Agent EDNA
-## *Framework for High-Fidelity Software Context Engineering*
+## *Framework for High-Quality Software Context Engineering*
 
 ---
 
-### 1. The Crisis of "Messy Context" 🌪️
-*   **The Problem:** Large Language Models (LLMs) require extensive, high-fidelity context to maintain accuracy. However, models operate within a finite **Context Window**. 
-*   **The Technical Barrier:** As projects grow, providing the entire codebase exceeds token limits. When context is over-saturated or poorly compressed, the model suffers from "Lost in the Middle" phenomena or "Context Amnesia," leading to high-confidence **Hallucinations**.
-*   **The Symptom:** Scope creep, bloated features ("capes"), and broken dependency chains caused by the model losing track of global constraints.
-*   **The Solution:** **Agent EDNA.** A systematic framework that engineers the project environment *before* implementation. It manages context strategically by breaking complexity into self-contained, high-fidelity modules, ensuring the LLM always operates within its "sweet spot" of accuracy.
+### 1. The Problem: "Messy Context" 🌪️
+*   **The Problem:** LLMs need accurate context to work well, but they have a limited **Context Window**.
+*   **The Technical Challenge:** Large projects exceed these limits. Too much data or bad compression causes **"Context Amnesia,"** leading to AI **Hallucinations**.
+*   **The Results:** Bloated features ("capes") and broken code because the AI loses track of the big picture.
+*   **The Solution:** **Agent EDNA.** She organizes the project *before* coding. By breaking tasks into small, clear modules, she keeps the AI accurate.
 
 ---
 
 ### 2. Why "EDNA"? 👓
-The persona of **Edna Mode** (from *The Incredibles*) was chosen to embody three core engineering principles:
-1.  **Uncompromising Quality:** Zero tolerance for mediocrity or "good enough" solutions.
-2.  **The "No Capes" Philosophy:** A strict mandate to eliminate useless features (bloat) that weigh a project down and introduce technical debt.
-3.  **Visual Dominance:** A belief that if logic is too complex to be visualized, it is too complex to be safely implemented.
+The **Edna Mode** persona represents three engineering principles:
+1.  **Top Quality:** No "good enough" shortcuts.
+2.  **No Capes:** Remove useless features (bloat) that slow down the project.
+3.  **Visual First:** If logic is too complex to see, it's too complex to build safely.
 
 ---
 
-### 3. The 5-Phase Workflow 🏛️
-EDNA operates through a rigorous, linear progression to ensure architectural integrity:
+### 3. The 5 Phases 🏛️
+EDNA follows a linear path to ensure a solid build:
 
-1.  **Phase 0: Project Context:** Assessing the landscape, technology constraints, and operational mode (Web, Mobile, CLI, etc.).
-2.  **Phase 1: Discovery & PRD:** Distilling requirements into a high-fidelity Product Requirements Document.
-3.  **Phase 2: Global Architecture:** Defining the master data model, tech stack, and module orchestration.
-4.  **Phase 3: Granular Specification:** Creating self-contained module specs with binary pass/fail criteria.
-5.  **Phase 4: Agentic Execution:** Deploying a "Battle-Ready" prompt to a coding agent for iterative implementation.
+1.  **Phase 0: Project Context:** Checking tech stack and project type.
+2.  **Phase 1: Discovery & PRD:** Writing a clear Product Requirements Document (PRD).
+3.  **Phase 2: Global Architecture:** Setting up the data model, tech, and module plan.
+4.  **Phase 3: Granular Specs:** Creating module specs with clear pass/fail tests.
+5.  **Phase 4: Agentic Execution:** Using a strong prompt for the AI to start coding.
 
 ---
 
 ### 4. The Agentic Lifecycle 🔄
-*Collaboration flow between User, Architect (EDNA), and the Implementation Agent.*
+*Collaboration between User, Architect (EDNA), and the Coding Agent.*
 
 ```mermaid
 sequenceDiagram
@@ -45,36 +45,36 @@ sequenceDiagram
     Note over EDNA: Phase 0-3: Research & Blueprinting
     EDNA->>Plan: Generate PRD, Architecture, & Specs
     EDNA->>User: Request Blueprint Approval
-    User->>EDNA: Approve & Initiate Build
+    User->>EDNA: Approve & Start Build
     
     rect rgb(240, 240, 240)
         Note right of Plan: Phase 4: Execution Loop
         EDNA->>Coder: Provide Agent Prompt + Plan Context
         Coder->>Plan: Read Current Module Spec
-        Coder->>Coder: Implement & Validate
+        Coder->>Coder: Implement & Test
         alt Success
             Coder->>Plan: Update progress.json & logs
             Coder->>User: Request Module Review
         else Failure (Max 3)
-            Coder->>Coder: Automatic Git Revert/Rollback
-            Coder->>User: Report Failure & Context
+            Coder->>Coder: Automatic Git Revert
+            Coder->>User: Report Failure
         end
     end
     
     User->>Coder: Approve Module
-    Coder->>Plan: Move to Next Sequential Module
+    Coder->>Plan: Move to Next Module
 ```
 
 ---
 
 ### 5. Technical Advantages 🏆
-*   **Resilience:** State is persisted in `progress.json`, allowing for seamless recovery after session interruptions.
-*   **Traceability:** Every architectural decision is recorded in `decisions.md` using the ADR (Architectural Decision Record) format.
-*   **Binary Validation:** Testing is based on pass/fail checks, removing ambiguity from the "Definition of Done."
+*   **Resilience:** State is saved in `progress.json`. You can resume anytime.
+*   **Traceability:** Every decision is logged in `decisions.md` (ADR format).
+*   **Clear Validation:** Testing uses pass/fail checks to remove doubt.
 
 ---
 
-### 🛠️ Core Directives
+### 🛠️ Core Principles
 *   **Context is Foundation.**
 *   **Structure is Security.**
-*   **No Capes (Eliminate Bloat).**
+*   **No Capes (No Bloat).**
