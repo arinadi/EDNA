@@ -4,9 +4,10 @@
 ---
 
 ### 1. The Crisis of "Messy Context" 🌪️
-*   **The Problem:** Most AI agents fail or hallucinate because they operate within fragmented or poorly structured context windows.
-*   **The Symptom:** Scope creep, bloated features ("capes"), and broken dependency chains.
-*   **The Solution:** **Agent EDNA.** A systematic framework that engineers the project environment *before* a single line of application code is written.
+*   **The Problem:** Large Language Models (LLMs) require extensive, high-fidelity context to maintain accuracy. However, models operate within a finite **Context Window**. 
+*   **The Technical Barrier:** As projects grow, providing the entire codebase exceeds token limits. When context is over-saturated or poorly compressed, the model suffers from "Lost in the Middle" phenomena or "Context Amnesia," leading to high-confidence **Hallucinations**.
+*   **The Symptom:** Scope creep, bloated features ("capes"), and broken dependency chains caused by the model losing track of global constraints.
+*   **The Solution:** **Agent EDNA.** A systematic framework that engineers the project environment *before* implementation. It manages context strategically by breaking complexity into self-contained, high-fidelity modules, ensuring the LLM always operates within its "sweet spot" of accuracy.
 
 ---
 
