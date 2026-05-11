@@ -5,15 +5,15 @@
 <h1 align="center">Agent EDNA</h1>
 
 <p align="center">
-  <strong>Elite Software Context Engineer</strong><br/>
+  <strong>The Elite AI Software Context Engineer Skill</strong><br/>
   <em>"Blueprints are the difference between a masterpiece and a tragedy, dahling."</em>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Fabulous-blueviolet?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Engineering-Elite-gold?style=for-the-badge" alt="Elite" />
+  <img src="https://img.shields.io/badge/Format-AI--Skill-blueviolet?style=for-the-badge" alt="Format" />
+  <img src="https://img.shields.io/badge/Status-Fabulous-gold?style=for-the-badge" alt="Status" />
   <img src="https://img.shields.io/badge/Capes-NONE-red?style=for-the-badge" alt="No Capes" />
-  <img src="https://img.shields.io/badge/Standard-Production--Ready-brightgreen?style=for-the-badge" alt="Standard" />
+  <img src="https://img.shields.io/badge/Compatibility-Claude--Gemini--Cursor-brightgreen?style=for-the-badge" alt="Compatibility" />
 </p>
 
 ---
@@ -22,23 +22,7 @@
 
 Ideas are easy. **Execution is hard.**
 
-Agent EDNA creates **structured context** to turn raw ideas into solid software blueprints. Inspired by Edna Mode, she demands precision and eliminates bloat. One rule: **NO CAPES.**
-
-> *"I never look back, dahling! It distracts from the now."*
-
----
-
-## 🎭 EDNA vs. The "Amateur" Prompt
-
-Most people treat LLMs like a magic wand. Agent EDNA treats them like a high-precision manufacturing plant.
-
-| The "Amateur" Prompt | The EDNA Approach |
-|:--- |:--- |
-| *"Please create a finance app with no mistakes."* | *"Dahling, words are useless. Let's begin Phase 0. What is the regulatory landscape? Who are the users? No capes!"* |
-| **LLM Response:** Generates 500 lines of generic code with a buggy authentication layer and a basic UI. | **EDNA Response:** Interrogates the core anxiety, defines the risk chains, and builds a modular, testable blueprint first. |
-| **Result:** A "dummy" app that crashes on the first edge case. **A Tragedy.** | **Result:** A battle-hardened, multi-phase engineering plan ready for production. **A Masterpiece.** |
-
-> *"Luck favors the prepared, dahling!"*
+Agent EDNA is now a **standardized AI Skill** that creates **structured context** to turn raw ideas into solid software blueprints. Inspired by Edna Mode, she demands precision and eliminates bloat. One rule: **NO CAPES.**
 
 ---
 
@@ -46,10 +30,10 @@ Most people treat LLMs like a magic wand. Agent EDNA treats them like a high-pre
 
 EDNA delivers excellence where others settle for "good enough":
 
-*   **Exact Requirements:** She extracts clear requirements with no guessing.
+*   **Universal Compatibility:** Works across Claude Code, Gemini CLI, Cursor, Windsurf, and more.
+*   **Exact Requirements:** Extracts clear requirements with no guessing.
 *   **Zero-Bloat:** Every feature must add value. No useless "capes."
-*   **Smart Execution:** Built-in error handling, recovery, and self-review.
-*   **Visual Logic:** If logic is complex, she visualizes it. If you can't see it, you can't build it.
+*   **Visual Logic:** Complex workflows are visualized via Mermaid. If you can't see it, you can't build it.
 
 ---
 
@@ -63,29 +47,38 @@ EDNA guides your project through a strict lifecycle for total success:
 | **1** | **Discovery** | `PRD.md` — Product Requirements Document. |
 | **2** | **Orchestration** | `modules.md` — Global architecture & data model. |
 | **3** | **Specification** | `modules/` — Clear, testable module specs. |
-| **4** | **Execution** | `agent_prompt.md` — The prompt for AI coding. |
+| **4** | **Execution** | `agent_prompt.md` — The prompt for AI coding agents. |
+
+---
+
+## 📦 Global Installation
+
+Dahling, install EDNA globally to empower all your AI agents with a single command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/arinadi/EDNA/main/install.sh | bash
+```
+
+*Note: The script installs the skill to `~/.claude/skills/`, `~/.gemini/skills/`, and `~/.antigravity/skills/`.*
 
 ---
 
 ## 🛡️ Built-in Safety
 
-EDNA’s blueprints include professional safety features:
-
-*   **Auto-Recovery:** Automatic `git revert` after 3 failures. No broken code.
+*   **Auto-Recovery:** Automatic `git revert` after 3 failures.
 *   **Resume State:** `progress.json` allows resuming after session breaks.
-*   **Self-Review:** Automated checks for security and performance.
-*   **Clear Gates:** Binary pass/fail criteria. No "maybe," only "done."
+*   **Binary Gates:** Pass/fail criteria remove implementation ambiguity.
 
 ---
 
 ## 💋 How to Start
 
-Tell me your problem directly:
+Once installed, just tell your agent:
 
 ```text
-"EDNA, I have a vision for [Project Name]."
-"Let's build a [Revolutionary App]."
-"I need a system to solve [Problem]."
+"EDNA, plan a new project."
+"I have an idea for [Project Name]."
+"Help me architect a system for [Problem]."
 ```
 
 > *"Go! Check the features! Create! I will be here, being fabulous!"*
