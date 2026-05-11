@@ -87,7 +87,7 @@ sequenceDiagram
 
 *   **Resilience (State Persistence):** `progress.json` tracks the `last_completed` module. If the session crashes, the agent resumes implementation from the exact point of failure without re-reading the entire history.
 *   **Institutional Memory (ADRs):** Significant technical choices are logged in `decisions.md` using the **Architectural Decision Record** format. This provides the "Why" behind the "What," preventing future agents from reverting intentional designs.
-*   **Token Budgeting (Context Compression):** When context exceeds **80k tokens**, EDNA automatically compresses history. Older modules are summarized into a 3-field object `{module, files, exports}`, keeping the current module in full fidelity.
+*   **Context Management (Modularization):** By enforcing strict modularity, EDNA ensures that the coding agent only processes one small, self-contained module at a time. This keeps the active context well within the high-accuracy "sweet spot" of the LLM's memory, preventing the hallucinations that occur when a model is overwhelmed by a massive codebase.
 *   **Failure Protocol:** A strict 3-attempt limit for bug fixes. If the agent cannot resolve a task, it must `git revert` to the last known-good state. **We never proceed with a broken build.**
 
 ---
