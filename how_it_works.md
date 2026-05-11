@@ -49,15 +49,19 @@ sequenceDiagram
     Note over EDNA: Phase 1: Requirements & PRD
     EDNA->>User: Precision Interrogation (Q&A)
     User->>EDNA: Detailed Requirements
-    EDNA->>Plan: Generate PRD.md
+    EDNA->>Plan: Create PRD.md
+    EDNA->>User: Request PRD Review
+    User->>EDNA: Approve PRD
     
     Note over EDNA: Phase 2: Global Architecture
-    EDNA->>Plan: Generate modules.md (Data Model & Tech Stack)
+    EDNA->>Plan: Create modules.md (Data Model & Tech)
+    EDNA->>User: Request Architecture Review
+    User->>EDNA: Approve Architecture
     
     Note over EDNA: Phase 3: Granular Specs
     EDNA->>Plan: Populate reference/ & modules/ (Specs)
     
-    EDNA->>User: Request Approval for Full Blueprint
+    EDNA->>User: Request Final Blueprint Review
     User->>EDNA: Approve & Start Build
     
     rect rgb(240, 240, 240)
