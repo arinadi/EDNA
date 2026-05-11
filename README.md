@@ -1,129 +1,83 @@
 <p align="center">
-  <img src="edna_logo.png" alt="Agent EDNA" width="180" />
+  <img src="edna_logo.png" alt="Agent EDNA" width="220" />
 </p>
 
 <h1 align="center">Agent EDNA</h1>
 
 <p align="center">
-  <strong>Software Context Engineer</strong><br/>
-  <em>"It must be fabulous, dahling! But more importantly, it must work."</em>
+  <strong>The World's Most Elite Software Context Engineer</strong><br/>
+  <em>"Blueprints aren't just plans, dahling. They are the difference between a masterpiece and a tragedy."</em>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/phase-0%20to%204-amber?style=flat-square" alt="Phases" />
-  <img src="https://img.shields.io/badge/capes-NONE-red?style=flat-square" alt="No Capes" />
-  <img src="https://img.shields.io/badge/status-fabulous-blueviolet?style=flat-square" alt="Status" />
-  <img src="https://img.shields.io/badge/agentic-production--grade-brightgreen?style=flat-square" alt="Agentic" />
+  <img src="https://img.shields.io/badge/Status-Fabulous-blueviolet?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/Engineering-Elite-gold?style=for-the-badge" alt="Elite" />
+  <img src="https://img.shields.io/badge/Capes-NONE-red?style=for-the-badge" alt="No Capes" />
+  <img src="https://img.shields.io/badge/Standard-Production--Ready-brightgreen?style=for-the-badge" alt="Standard" />
 </p>
 
 ---
 
-## Who is EDNA?
+## 💎 The EDNA Manifesto
 
-**Agent EDNA** is an AI-driven Software Context Engineer — inspired by the legendary **Edna Mode** from Pixar's *The Incredibles*.
+Messy ideas are common. **Elite execution is rare.**
 
-Just like her namesake — the half-Japanese, half-German fashion auteur with oversized glasses, a razor-sharp bob, and zero tolerance for mediocrity — Agent EDNA transforms messy project ideas into sleek, engineered blueprints.
+Agent EDNA doesn't just "generate code." She engineers **high-fidelity context** that transforms raw concepts into sleek, battle-hardened software blueprints. Inspired by the legendary Edna Mode, she demands precision, eliminates bloat, and has an absolute, non-negotiable rule: **NO CAPES.**
 
 > *"I never look back, dahling! It distracts from the now."*
 
-She doesn't guess. She **interrogates**. She doesn't bloat. She **eliminates**. And above all — **NO CAPES.** No useless features that weigh a project down.
+---
+
+## 🚀 Why EDNA?
+
+While others settle for "good enough," EDNA delivers the **fabulous**:
+
+*   **Precision Interrogation:** She doesn't guess your requirements; she extracts them with surgical accuracy.
+*   **Zero-Bloat Architecture:** Every feature must earn its place. If it doesn't add value, it’s a cape. **Snip, snip!**
+*   **Agentic Resilience:** Built-in failure protocols, recovery states, and self-reflection loops. She doesn't just run; she survives.
+*   **Visual Dominance:** Logic that exceeds three steps is visualized. If you can't see it, you don't understand it.
 
 ---
 
-## What Does EDNA Do?
+## 🛠️ The 5-Phase Masterstroke
 
-EDNA guides you through a structured **5-phase workflow** to go from raw idea to implementation-ready blueprint:
+EDNA guides your project through a rigorous lifecycle designed for total success:
 
-| Phase | Name | Output |
-|:-----:|------|--------|
-| **0** | Project Context | Landscape assessment, project mode selection (web-app, mobile, cli, data-pipeline, ml-service) |
-| **1** | Requirement Discovery & PRD Generation | `PRD.md` — Product Requirements Document |
-| **2** | Global Architecture & Module Orchestration | `modules.md` — Global tech stack, design rules, storage-agnostic data model, and module dependencies |
-| **3** | Granular Module Specification | `modules/` — Self-contained specs with complexity estimates, binary acceptance criteria, and testing blueprints |
-| **4** | Agent Prompt (Iterative Agentic Coding) | `agent_prompt.md` — Battle-ready execution prompt with failure recovery, self-reflection, and evaluation loops |
-
-Every phase ends with a **✅ Completion Criteria Checklist** — EDNA never barrels ahead without approval.
+| Phase | Purpose | Deliverable |
+|:---:|:--- |:--- |
+| **0** | **Foundation** | Landscape assessment & project mode selection. |
+| **1** | **Discovery** | `PRD.md` — The Product Requirements Document. |
+| **2** | **Orchestration** | `modules.md` — Global architecture & master data model. |
+| **3** | **Specification** | `modules/` — Granular, self-contained implementation specs. |
+| **4** | **Execution** | `agent_prompt.md` — The battle-ready prompt for agentic coding. |
 
 ---
 
-## Project Structure
+## 🛡️ Agentic Armor
 
-Every project produces an organized planning folder:
+EDNA’s blueprints are equipped with professional-grade safety features:
+
+*   **Failure Protocol:** Automatic `git revert` after 3 failed attempts. Never ship broken logic.
+*   **Recovery State:** `progress.json` allows seamless resume after session breaks.
+*   **Self-Reflection:** Automated post-module reviews for security, duplication, and performance.
+*   **Acceptance Gates:** Binary pass/fail criteria. No "maybe," only "done."
+
+---
+
+## 💋 How to Begin
+
+Dahling, don't waste time with pleasantries. Just tell me the problem:
 
 ```text
-[project]_plan/
-├── PRD.md                      # Phase 1 — Product Requirements Document
-├── modules.md                  # Phase 2 — Global Tech Stack, Design Rules, Data Model & Module Orchestration
-├── modules/                    # Phase 3 — Self-contained module specs
-│   ├── 0-setup.md
-│   ├── 1-auth.md
-│   └── ...
-├── agent_prompt.md             # Phase 4 — Agent Prompt for Agentic Coding
-├── reference/
-│   ├── api_[service_name].md   # API docs (endpoints, auth, rate limits)
-│   ├── lib_[library_name].md   # Library docs (usage, config, gotchas)
-│   └── ...
-├── progress.json               # Runtime — Recovery state (last completed module)
-├── execution_log.md            # Runtime — Operational log per module
-└── decisions.md                # Runtime — Architectural Decision Records (ADR)
+"EDNA, I have a vision for a [Project Name]."
+"Let's build a [Revolutionary App]."
+"I need a system that solves [The Impossible]."
 ```
 
----
-
-## Agentic Features
-
-| Feature | Description |
-|---------|-------------|
-| **Failure Protocol** | Max 3 fix attempts → `git revert` rollback → never proceed broken |
-| **Recovery State** | `progress.json` enables resume after crash or session break |
-| **Self-Reflection** | Post-module security, duplication, and performance review |
-| **Evaluation Loop** | Architecture health check every 3 modules |
-| **Acceptance Gate** | Binary pass/fail criteria + automated security scanning |
-| **Token Budget** | Auto-compress at >80k tokens, on-demand re-fetch |
-| **Context Amnesia Prevention** | Review codebase before each new module |
-| **Plan Immutability** | Planning docs are read-only during execution |
-| **Cape Negotiation** | Technical alternatives for questionable features |
-| **Cross-Module Risk** | Dependency risk chain analysis |
-
----
-
-## EDNA's Principles
-
-| Principle | In Her Words |
-|-----------|-------------|
-| **No Capes** | *"NO CAPES! No useless features!"* |
-| **Be Direct** | *"Yes, words are useless! Gobble-gobble-gobble! Too much of it, dahling!"* |
-| **Precision** | Every pixel and every data point must have a purpose. |
-| **Visual over Verbal** | If it exceeds 3 steps, use a Mermaid diagram. |
-| **Differentiation** | *"A little bit different is better than a little bit better."* |
-| **Excellence** | Make it look like a billion-dollar blueprint. |
-
----
-
-## How to Start
-
-No magic phrase needed. Just tell EDNA your problem:
-
-```
-"I have an idea for [Project Name]."
-"Let's build [something]."
-"I need an app that does [X]."
-```
-
-> *"Dahling, just tell me the problem. I'll make it fabulous."*
-
----
-
-## Files
-
-| File | Description |
-|------|-------------|
-| [`agent.md`](agent.md) | Agent EDNA prompt — persona, phases, agentic features |
-| [`README.md`](README.md) | You are here, dahling |
+> *"Go! Check the features! Create! I will be here, being fabulous!"*
 
 ---
 
 <p align="center">
-  <em>"Go! Check the features! Create! I will be here, being fabulous!"</em><br/>
-  <strong>— Agent EDNA</strong>
+  Proudly Engineered for Excellence. <b>No Capes Allowed.</b>
 </p>
