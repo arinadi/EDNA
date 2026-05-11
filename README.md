@@ -11,7 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Format-AI--Skill-blueviolet?style=for-the-badge" alt="Format" />
-  <img src="https://img.shields.io/badge/Status-Fabulous-gold?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/Status-Elite-gold?style=for-the-badge" alt="Status" />
   <img src="https://img.shields.io/badge/Capes-NONE-red?style=for-the-badge" alt="No Capes" />
   <img src="https://img.shields.io/badge/Compatibility-Claude--Gemini--Cursor-brightgreen?style=for-the-badge" alt="Compatibility" />
 </p>
@@ -20,65 +20,79 @@
 
 ## 💎 The EDNA Manifesto
 
-Ideas are easy. **Execution is hard.**
+Ideas are easy. **Execution is where amateurs fail.**
 
-Agent EDNA is now a **standardized AI Skill** that creates **structured context** to turn raw ideas into solid software blueprints. Inspired by Edna Mode, she demands precision and eliminates bloat. One rule: **NO CAPES.**
+Most people think "prompting" is a magic wand. They toss a vague sentence at an LLM and wonder why the result is a hallucinatory mess. Agent EDNA is the cure for that delusion. 
+
+She creates **high-fidelity context** that turns raw ideas into solid software blueprints. No fluff, no guessing, and absolutely **NO CAPES.**
+
+---
+
+## 🎭 EDNA vs. The "One-Shot" Delusion
+
+If you think a single prompt can build a system, you're not an engineer—you're a dreamer.
+
+| The Amateur Prompt | The EDNA Approach |
+|:--- |:--- |
+| *"Build me a secure finance app with no mistakes."* | *"Stop talking. Let's begin Phase 0. Who are the users? What are the risk chains? Precision, or nothing."* |
+| **Response:** 300 lines of buggy boilerplate and a broken login page. | **Response:** A deterministic, multi-phase blueprint that actually fits in a context window. |
+| **Result:** A tragedy of technical debt. | **Result:** A production-ready masterpiece. |
+
+> *"Luck favors the prepared. Prompting favors the hopeful. We don't hope; we engineer."*
 
 ---
 
 ## 🚀 Why EDNA?
 
-EDNA delivers excellence where others settle for "good enough":
+Because "good enough" is just another word for "broken":
 
-*   **Universal Compatibility:** Works across Claude Code, Gemini CLI, Cursor, Windsurf, and more.
-*   **Exact Requirements:** Extracts clear requirements with no guessing.
-*   **Zero-Bloat:** Every feature must add value. No useless "capes."
-*   **Visual Logic:** Complex workflows are visualized via Mermaid. If you can't see it, you can't build it.
+*   **Universal Skill:** Installs globally into Claude Code, Gemini CLI, Cursor, and Windsurf.
+*   **Precision Discovery:** She interrogates your vagueness until the requirements are crystalline.
+*   **Zero-Bloat (No Capes):** If a feature doesn't add value, it's a cape. We snip it.
+*   **Modular Dominance:** We break complexity into units the AI can actually understand without hallucinating.
 
 ---
 
-## 🛠️ The 5-Phase Plan
+## 🛠️ The 5-Phase Master Plan
 
-EDNA guides your project through a strict lifecycle for total success:
+EDNA doesn't wing it. She follows a strict lifecycle:
 
 | Phase | Purpose | Deliverable |
 |:---:|:--- |:--- |
-| **0** | **Foundation** | Tech stack & project type selection. |
-| **1** | **Discovery** | `PRD.md` — Product Requirements Document. |
-| **2** | **Orchestration** | `modules.md` — Global architecture & data model. |
-| **3** | **Specification** | `modules/` — Clear, testable module specs. |
-| **4** | **Execution** | `agent_prompt.md` — The prompt for AI coding agents. |
+| **0** | **Foundation** | Landscape audit & project mode selection. |
+| **1** | **Discovery** | `PRD.md` — The source of truth. |
+| **2** | **Orchestration** | `modules.md` — The architectural backbone. |
+| **3** | **Specification** | `modules/` — Testable, binary-pass specs. |
+| **4** | **Execution** | `agent_prompt.md` — The implementer's directive. |
 
 ---
 
 ## 📦 Global Installation
 
-Dahling, install EDNA globally to empower all your AI agents with a single command:
+Don't manually copy-paste like a caveman. Install EDNA globally with one command:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/arinadi/EDNA/main/install.sh | bash
 ```
 
-*Note: The script installs the skill to `~/.claude/skills/`, `~/.gemini/skills/`, and `~/.antigravity/skills/`.*
-
 ---
 
-## 🛡️ Built-in Safety
+## 🛡️ Built-in Resilience
 
-*   **Auto-Recovery:** Automatic `git revert` after 3 failures.
-*   **Resume State:** `progress.json` allows resuming after session breaks.
-*   **Binary Gates:** Pass/fail criteria remove implementation ambiguity.
+*   **Auto-Recovery:** Automatic `git revert` after 3 failures. We don't ship broken code.
+*   **Resume State:** `progress.json` knows where you left off. Crashes are irrelevant.
+*   **Binary Gates:** Logic is either "Correct" or "Fail." There is no "Maybe."
 
 ---
 
 ## 💋 How to Start
 
-Once installed, just tell your agent:
+Stop wishing. Start engineering.
 
 ```text
 "EDNA, plan a new project."
 "I have an idea for [Project Name]."
-"Help me architect a system for [Problem]."
+"Interrogate my requirements for [System]."
 ```
 
 > *"Execution is everything. Start creating. I'll be here ensuring it's correct."*
