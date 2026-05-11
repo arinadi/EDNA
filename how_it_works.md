@@ -42,27 +42,40 @@ sequenceDiagram
     participant Coder as Coding Agent (Builder)
 
     User->>EDNA: Provide Idea
-    Note over EDNA: Phases 0-3: Research & Design
-    EDNA->>Plan: Create PRD, Architecture, & Specs
-    EDNA->>User: Request Approval
+    
+    Note over EDNA: Phase 0: Project Context
+    EDNA->>EDNA: Assess Landscape & Select Mode
+    
+    Note over EDNA: Phase 1: Requirements & PRD
+    EDNA->>User: Precision Interrogation (Q&A)
+    User->>EDNA: Detailed Requirements
+    EDNA->>Plan: Generate PRD.md
+    
+    Note over EDNA: Phase 2: Global Architecture
+    EDNA->>Plan: Generate modules.md (Data Model & Tech Stack)
+    
+    Note over EDNA: Phase 3: Granular Specs
+    EDNA->>Plan: Populate reference/ & modules/ (Specs)
+    
+    EDNA->>User: Request Approval for Full Blueprint
     User->>EDNA: Approve & Start Build
     
     rect rgb(240, 240, 240)
         Note right of Plan: Phase 4: Execution Loop
         EDNA->>Coder: Pass Prompt + Context
-        Coder->>Plan: Read Module Spec
-        Coder->>Coder: Code & Test
+        Coder->>Plan: Read Current Module Spec
+        Coder->>Coder: Implement & Test
         alt Success
-            Coder->>Plan: Update logs & state
-            Coder->>User: Request Review
-        else Failure (Max 3)
+            Coder->>Plan: Update logs & state (progress.json)
+            Coder->>User: Request Module Review
+        else Failure (Max 3 attempts)
             Coder->>Coder: Rollback (Git Revert)
-            Coder->>User: Report Error
+            Coder->>User: Report Error & Context
         end
     end
     
     User->>Coder: Approve Module
-    Coder->>Plan: Start Next Module
+    Coder->>Plan: Proceed to Next Module
 ```
 
 ---
