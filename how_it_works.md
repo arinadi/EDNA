@@ -8,7 +8,10 @@ LLM performance depends on the quality and volume of the provided context. Agent
 
 *   **Context Window Limitations:** LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the "Lost in the Middle" effect.
 *   **Accuracy and Hallucination:** In long-running development cycles, models can lose track of early architectural constraints. This results in hallucinations where the AI proposes code that conflicts with the established global state.
-*   **Modular Isolation:** EDNA manages context by enforcing a modular structure. By focusing the model on a single, self-contained module at a time, the framework maintains the active context within high-accuracy ranges.
+*   **Modular Isolation (Feature-First Strategy):** Unlike traditional "Layer-First" (Frontend vs. Backend) or "Design-First" approaches, EDNA enforces **Feature-Driven Modularization**. 
+    *   **The Rationale:** Layer-based development often leads to "Dummy Debt," where UI mockups remain disconnected from backend logic, resulting in functional mismatches. 
+    *   **Fullstack Integration:** Each module represents a complete, integrated feature (Design + Logic). This ensures that components are not just visual shells but are fully connected to their respective services and data models from the start.
+    *   **Dependency-Based Execution:** Modules are executed in a strict dependency sequence. A feature is only considered "Done" when the design, frontend, and backend integration are verified together, preventing the "ego-silo" effect where developers focus only on their specific layer rather than the integrated deliverable.
 
 ---
 
