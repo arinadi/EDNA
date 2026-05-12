@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>The Elite AI Software Context Engineer Skill</strong><br/>
-  <em>"Blueprints are the difference between a masterpiece and a tragedy."</em>
+  <em>"Blueprints are the difference between a robust system and an architectural collapse."</em>
 </p>
 
 <p align="center">
@@ -20,23 +20,23 @@
 
 ## 💎 The EDNA Manifesto
 
-Ideas are easy. **Execution is where amateurs fail.**
+Ideas are easy. **Execution is where most projects fail.**
 
-Most people think "prompting" is a magic wand. They toss a vague sentence at an LLM and wonder why the result is a hallucinatory mess. Agent EDNA is the cure for that delusion. 
+Naive prompting is not engineering. Ambiguous instructions lead to hallucinatory results and fragmented codebases. Agent EDNA is the solution to that inefficiency.
 
-She creates **high-fidelity context** that turns raw ideas into solid software blueprints. No fluff, no guessing, and absolutely **NO CAPES.**
+She engineers **high-fidelity context** that transforms raw concepts into precise software blueprints. No fluff, no guessing, and absolutely **NO CAPES.**
 
 ---
 
-## 🎭 EDNA vs. The "One-Shot" Delusion
+## 🎭 EDNA vs. The "One-Shot" Fallacy
 
-If you think a single prompt can build a system, you're not an engineer—you're a dreamer.
+If you think a single prompt can build a complex system, you are a dreamer, not an engineer.
 
-| The Amateur Prompt | The EDNA Approach |
+| Amateur Prompting | The EDNA Approach |
 |:--- |:--- |
-| *"Build me a secure finance app with no mistakes."* | *"Stop talking. Let's begin Phase 0. Who are the users? What are the risk chains? Precision, or nothing."* |
-| **Response:** 300 lines of buggy boilerplate and a broken login page. | **Response:** A deterministic, multi-phase blueprint that actually fits in a context window. |
-| **Result:** A tragedy of technical debt. | **Result:** A production-ready masterpiece. |
+| *"Build me a secure finance app with no mistakes."* | *"Stop talking. Let's begin Phase 0. What are the risk chains? Precision is mandatory."* |
+| **Response:** Generic boilerplate and broken authentication. | **Response:** A deterministic, multi-phase blueprint that respects context limits. |
+| **Result:** A failure of technical debt. | **Result:** A production-ready build. |
 
 > *"Luck favors the prepared. Prompting favors the hopeful. We don't hope; we engineer."*
 
@@ -44,10 +44,10 @@ If you think a single prompt can build a system, you're not an engineer—you're
 
 ## 🚀 Why EDNA?
 
-*   **Universal Skill:** Works across Claude Code, Gemini CLI, Cursor, and Windsurf.
-*   **Precision Discovery:** She interrogates your vagueness until the requirements are crystalline.
-*   **Zero-Bloat (No Capes):** If a feature doesn't add value, it's a cape. We snip it.
-*   **Modular Dominance:** Complexity is broken into units the AI can understand without hallucinating.
+*   **Universal Skill:** Installs globally into Claude Code, Gemini CLI, Cursor, and Windsurf.
+*   **Precision Discovery:** She extracts implicit requirements until the technical scope is clear.
+*   **Zero-Bloat (No Capes):** If a feature doesn't add value, it is a "cape." We eliminate it.
+*   **Modular Dominance:** We break complexity into units the AI can implement with high accuracy.
 
 ---
 
@@ -59,7 +59,7 @@ If you think a single prompt can build a system, you're not an engineer—you're
 | **1** | **Discovery** | `PRD.md` — The source of truth. |
 | **2** | **Orchestration** | `modules.md` — The architectural backbone. |
 | **3** | **Specification** | `modules/` — Testable, binary-pass specs. |
-| **4** | **Execution** | `agent_prompt.md` — The implementer's directive. |
+| **4** | **Execution** | `agent_prompt.md` — The implementation directive. |
 
 ---
 
@@ -79,20 +79,16 @@ Clone this repository into your agent's skill directory:
 *   **Gemini CLI:** `~/.gemini/skills/edna`
 *   **Antigravity:** `~/.antigravity/skills/edna`
 
-```bash
-git clone https://github.com/arinadi/EDNA.git [DIRECTORY_PATH]
-```
-
 ### Path C: Project-Level (Local)
-If you only want EDNA for a specific project, clone it into a `.skills/` or `skills/` folder within your repository. Most modern agents will auto-detect local skills.
+For repository-specific usage, clone EDNA into a `.skills/` or `skills/` folder. Most modern agents will auto-detect local skills.
 
 ---
 
 ## 🛡️ Built-in Resilience
 
-*   **Auto-Recovery:** Automatic `git revert` after 3 failures. We don't ship broken code.
-*   **Resume State:** `progress.json` enables seamless recovery after crashes.
-*   **Binary Gates:** Objective pass/fail criteria. There is no "Maybe."
+*   **Auto-Recovery:** Automatic `git revert` after 3 failed implementation attempts.
+*   **Resume State:** `progress.json` tracks progress for seamless session recovery.
+*   **Binary Gates:** Objective pass/fail criteria. Ambiguity is not allowed.
 
 ---
 
@@ -103,7 +99,7 @@ Stop wishing. Start engineering.
 ```text
 "EDNA, plan a new project."
 "I have an idea for [Project Name]."
-"Interrogate my requirements for [System]."
+"Extract my requirements for [System]."
 ```
 
 ---

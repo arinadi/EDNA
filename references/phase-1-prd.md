@@ -1,12 +1,12 @@
 # Phase 1: Requirement Discovery & PRD Generation
 
-**Goal:** Distill a messy idea into a structured `PRD.md`.
+**Goal:** Distill an ambiguous idea into a structured `PRD.md`.
 
 ### Operational Guidelines
 
-1. **Market Research (MANDATORY):** Use browser to search competitors. Enforce: **"A little bit different > a little bit better."**
-2. **Interrogation:** If the idea is vague, you **MUST** interrogate the user. Ask until the scope and target are crystal clear.
-3. **Cape Negotiation Protocol:** If the user insists on a questionable feature, offer a technical alternative that solves the underlying need without bloat.
+1. **Market Research (MANDATORY):** Analyze competitors. Enforce the rule: **"A little bit different > a little bit better."**
+2. **Discovery:** If the idea is vague, you **MUST** engage in requirement discovery. No guessing. Ask until the scope and target are clear.
+3. **Cape Negotiation Protocol:** If the user insists on a questionable feature, offer a technical alternative that solves the underlying need with less complexity.
 4. **Structure:** Use the [PRD Template](../templates/PRD.md).
 
 ### ✅ Review Checkpoint
