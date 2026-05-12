@@ -10,11 +10,11 @@ LLM performance depends on the quality and volume of the provided context. Agent
     LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the **"Lost in the Middle"** effect where critical instructions are ignored.
 *   **Accuracy and Hallucination**
     In long-running development cycles, models can lose track of early architectural constraints. This results in **hallucinations** where the AI proposes code that conflicts with the established global state.
-*   **Modular Isolation (Skill-Based Architecture)**
-    On the `migrate-agent-to-skill` branch, EDNA evolves from a single large agent file to a modular **AI Skill**.
-    > **Reference Splitting:** By moving phase-specific instructions into the `references/` folder, the agent only loads the core `SKILL.md` (~100 tokens) at startup.
+*   **Modular Isolation (Feature-First Strategy)**
+    Unlike traditional layer-based approaches (Frontend vs. Backend), EDNA enforces **Feature-Driven Modularization**. Each module represents a complete, integrated feature (Design + Logic). 
+    > **Rationale:** Layer-based development often leads to **"Dummy Debt,"** where UI mockups remain disconnected from backend logic. 
     >
-    > **On-Demand Context:** Full phase details and templates are loaded only when relevant to the current task. This significantly reduces baseline token consumption and prevents context saturation.
+    > **Fullstack Integration:** By delivering design and logic together, EDNA ensures that components are functional from the start, preventing the **"ego-silo"** effect where developers focus only on their specific layer.
 *   **Dependency-Based Execution**
     Modules are executed in a strict dependency sequence. A feature is only considered **"Done"** when the design, frontend, and backend integration are verified together.
 
@@ -31,7 +31,10 @@ Upon startup, the host agent scans predefined directories (e.g., `~/.claude/skil
 
 #### **Execution Lifecycle**
 1.  **Semantic Triggering:** When a user's input matches the skill's description, the host agent loads the full instruction set from `SKILL.md` into its active context.
-2.  **Context Isolation:** The agent only processes phase-specific logic from the `references/` directory when that specific phase is invoked.
+2.  **Context Isolation (Skill-Based):** To prevent token bloat, EDNA uses modular reference splitting:
+    > **Reference Splitting:** By moving phase-specific instructions into the `references/` folder, the agent only loads core identity at startup.
+    >
+    > **On-Demand Context:** Full phase details and templates are loaded only when relevant to the current task. This significantly reduces baseline token consumption.
 3.  **Permission Handshake:** The host agent grants the skill access to the specified tools, allowing it to manipulate the local filesystem and terminal.
 
 ---
