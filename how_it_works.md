@@ -3,19 +3,19 @@
 
 ---
 
-### 1. Context Window Management 🌪️
+### Context Window Management 🌪️
 LLM performance depends on the quality and volume of the provided context. Agent EDNA addresses specific technical constraints:
 
 *   **Context Window Limitations:** LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the "Lost in the Middle" effect.
 *   **Accuracy and Hallucination:** In long-running development cycles, models can lose track of early architectural constraints. This results in hallucinations where the AI proposes code that conflicts with the established global state.
 *   **Modular Isolation (Skill-Based Architecture):** On the `migrate-agent-to-skill` branch, EDNA evolves from a single large agent file to a modular **AI Skill**.
     *   **Reference Splitting:** By moving phase-specific instructions into the `references/` folder, the agent only loads the core `SKILL.md` (~100 tokens) at startup.
-    *   **On-Demand Context:** Full phase details and templates are loaded only when relevant to the current task. This significantly reduces baseline token consumption and prevents context saturation during long development sessions.
-*   **Dependency-Based Execution:** Modules are executed in a strict dependency sequence. A feature is only considered "Done" when the design, frontend, and backend integration are verified together, preventing the "ego-silo" effect.
+    *   **On-Demand Context:** Full phase details and templates are loaded only when relevant to the current task. This significantly reduces baseline token consumption and prevents context saturation.
+*   **Dependency-Based Execution:** Modules are executed in a strict dependency sequence. A feature is only considered "Done" when the design, frontend, and backend integration are verified together.
 
 ---
 
-### 2. Client-Skill Integration Architecture 🔌
+### Client-Skill Integration Architecture 🔌
 Agent EDNA operates as a standardized **AI Skill**, following a lifecycle of discovery, semantic matching, and execution within the host agent (Claude Code, Gemini CLI, etc.).
 
 #### **Discovery & Indexing**
@@ -25,45 +25,43 @@ Upon startup, the host agent scans predefined directories (e.g., `~/.claude/skil
 *   **Tool Manifest:** A declaration of allowed system tools (e.g., `read_file`, `write_file`, `run_shell_command`).
 
 #### **Execution Lifecycle**
-1.  **Semantic Triggering:** When a user's input matches the skill's description (e.g., "help me architect a project"), the host agent loads the full instruction set from `SKILL.md` into its active context.
-2.  **Context Isolation:** To prevent token bloat, the agent only processes phase-specific logic from the `references/` directory when that specific phase is invoked.
-3.  **Permission Handshake:** The host agent grants the skill access to the specified tools, allowing it to manipulate the local filesystem and terminal as defined in the blueprint.
+1.  **Semantic Triggering:** When a user's input matches the skill's description, the host agent loads the full instruction set from `SKILL.md` into its active context.
+2.  **Context Isolation:** The agent only processes phase-specific logic from the `references/` directory when that specific phase is invoked.
+3.  **Permission Handshake:** The host agent grants the skill access to the specified tools, allowing it to manipulate the local filesystem and terminal.
 
 ---
 
-### 3. Comparative Analysis: Unmanaged Inference vs. Context Engineering 🧪
+### Comparative Analysis: Unmanaged Inference vs. Context Engineering 🧪
 This section contrasts unmanaged LLM generation (one-shot prompting) with managed context engineering.
 
 | Technical Aspect | One-Shot Prompting | Context-Managed Framework (EDNA) |
 |:--- |:--- |:--- |
-| **Input Analysis** | Direct code generation from natural language instructions. | Structured extraction of constraints (Regulatory, Security, Scalability) prior to coding. |
+| **Input Analysis** | Direct code generation from natural language instructions. | Structured extraction of constraints prior to coding. |
 | **Logic Verification** | Relies on model-internal probability for gap filling; prone to inconsistent logic. | Enforces **Binary Validation Criteria** within module specifications to ensure deterministic output. |
-| **Context Management** | Combines multiple layers (UI/Auth/Logic) in a single turn, increasing token entropy. | Uses **Feature-Driven Modularization** to maintain a low-entropy context window per task. |
+| **Context Management** | Combines multiple layers in a single turn, increasing token entropy. | Uses **Feature-Driven Modularization** to maintain a low-entropy context window per task. |
 | **Recovery Strategy** | Heuristic patching of errors, which can propagate technical debt. | Implements a **3-Attempt Limit** followed by an automated **Git Rollback** to a verified state. |
-| **State Persistence** | Transient; depends on the immediate session history. | Persistent; uses `progress.json` and `decisions.md` (ADR) to maintain state across sessions. |
+| **State Persistence** | Transient; depends on the immediate session history. | Persistent; uses `progress.json` and `decisions.md` (ADR) to maintain state. |
 
 ---
 
-### 3. Implementation Phases 🏛️
+### Implementation Phases 🏛️
 
 #### **Phase 0 & 1: Requirement Extraction**
-EDNA uses structured interrogation to extract requirements. The resulting `PRD.md` serves as the primary technical specification, establishing the scope before architecture begins.
+EDNA uses structured interrogation to extract requirements. The resulting `PRD.md` serves as the primary technical specification.
 
 #### **Phase 2: Global Architecture**
-*   **Storage-Agnostic Modeling:** Data entities are defined by relationships and field types. Implementation details (SQL, NoSQL, etc.) are deferred to ensure the core logic remains decoupled from the storage layer.
+*   **Storage-Agnostic Modeling:** Data entities are defined by relationships and field types. Implementation details are deferred to ensure core logic remains decoupled.
 *   **Risk Analysis:** Identification of critical dependencies and potential cascading failures across the module graph.
 
 #### **Phase 3: Module Specification**
-Individual modules are defined with a limited scope (typically under 20 files). Each specification includes **Binary Pass/Fail Criteria** to provide objective validation during implementation.
+Individual modules are defined with a limited scope (typically under 20 files). Each specification includes **Binary Pass/Fail Criteria** for objective validation.
 
 #### **Phase 4: Execution Loop**
-EDNA generates an `agent_prompt.md` that directs implementation. It enforces:
-*   **Dependency Review:** Mandatory analysis of existing modules to ensure architectural consistency.
-*   **Validation Gates:** Automated linting, type-checking, and security scans (blocking on critical vulnerabilities).
+EDNA generates an `agent_prompt.md` that directs implementation. It enforces dependency reviews and automated validation gates (linting, type-checking, and security scans).
 
 ---
 
-### 4. Operational Workflow 🔄
+### Operational Workflow 🔄
 
 ```mermaid
 sequenceDiagram
@@ -111,23 +109,6 @@ sequenceDiagram
     User->>Coder: Approve Module
     Coder->>Plan: Proceed to Next Module
 ```
-
----
-
-### 5. State Management & Reliability 🛡️
-
-*   **Persistence:** `progress.json` stores the current state of the implementation loop. This allows the system to resume from the last successful module without re-processing the entire project history.
-*   **Decision Logging (ADR):** Technical decisions are recorded in `decisions.md` using the Architectural Decision Record format, providing a historical record of technical choices and their rationale.
-*   **Modular Containment:** By strictly limiting the scope of each coding task, EDNA ensures that the active context remains within the model's most accurate memory range.
-*   **Error Handling:** A 3-attempt limit for automated fixes. Unresolved errors trigger a rollback to the last verified state, preventing the propagation of corrupted code.
-
----
-
-### 6. Efficiency Principles ✂️
-
-*   **Minimalism:** Removal of unnecessary features ("capes") reduces technical debt and improves system maintainability.
-*   **Binary Validation:** Tasks are considered complete only when both automated tests and specific pass/fail criteria are met.
-*   **Immutability:** Project plans are read-only during the execution phase to prevent unauthorized architectural drift.
 
 ---
 
