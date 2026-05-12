@@ -3,15 +3,18 @@
 
 ---
 
-### Manajemen Context Window
+### Manajemen Jendela Konteks
 Performa LLM bergantung pada kualitas dan fidelitas konteks yang diberikan. Agent EDNA menangani batasan teknis spesifik:
 
-*   **Batasan Context Window**
-    LLM memiliki batas token yang terbatas. Akurasi menurun saat jendela konteks mendekati kapasitas maksimal, sering kali memicu efek **"Lost in the Middle"** di mana model mengabaikan instruksi kritis.
+*   **Batasan Jendela Konteks (Context Window)**
+    LLM memiliki batas token yang terbatas. Akurasi menurun saat jendela konteks mendekati kapasitas maksimal, sering kali menyebabkan efek **"Lost in the Middle"** di mana model mengabaikan instruksi kritis.
 *   **Akurasi dan Halusinasi**
     Dalam siklus pengembangan yang panjang, model dapat kehilangan jejak batasan arsitektur awal. Hal ini menyebabkan **halusinasi** di mana AI menghasilkan kode yang bertentangan dengan keadaan global yang telah ditetapkan.
-*   **Isolasi Modular (Arsitektur Berbasis Skill)**
-    EDNA beroperasi sebagai **AI Skill** modular, melampaui definisi agen monolitik.
+*   **Isolasi Modular (Strategi Skill Berbasis Fitur)**
+    EDNA beroperasi sebagai **AI Skill** modular, menerapkan **Modularisasi Berbasis Fitur**. Setiap modul mewakili fitur yang lengkap dan terintegrasi (Desain + Logika). 
+    > **Rasional:** Pengembangan berbasis lapisan sering kali menyebabkan **"Utang Dummy"**, di mana komponen UI tetap terputus dari logika backend. 
+    >
+    > **Integrasi Fullstack:** Dengan memberikan desain dan logika secara bersamaan, EDNA memastikan komponen berfungsi sejak awal, mencegah **"silo effect"** di mana pengembang hanya fokus pada lapisan terisolasi.
 *   **Eksekusi Berbasis Dependensi**
     Modul dieksekusi dalam urutan dependensi yang ketat. Sebuah fitur hanya dianggap **"Selesai"** jika desain, frontend, dan integrasi backend telah diverifikasi bersama.
 
@@ -32,7 +35,7 @@ Saat startup, agen host memindai direktori yang telah ditentukan. Agen tersebut 
     > **Pemisahan Referensi:** Dengan memindahkan instruksi spesifik fase ke folder `references/` agar agen hanya memuat metadata identitas inti saat startup.
     >
     > **Konteks On-Demand:** Detail fase lengkap dan template hanya dimuat saat relevan dengan tugas saat ini. Hal ini secara signifikan mengurangi konsumsi token dasar.
-3.  **Handshake Perizinan:** Agen host memberikan akses ke alat tertentu yang diminta skill, memungkinkannya untuk memanipulasi filesystem lokal secara langsung.
+3.  **Handshake Perizinan:** Agen host memberikan akses ke alat sistem yang ditentukan, memungkinkannya untuk memanipulasi filesystem lokal dan terminal.
 
 ---
 
@@ -42,7 +45,7 @@ Bagian ini membandingkan pembuatan kode LLM tanpa pengelolaan (one-shot promptin
 | Aspek Teknis | One-Shot Prompting | Kerangka Kerja Terkelola (EDNA) |
 |:--- |:--- |:--- |
 | **Analisis Input** | Pembuatan kode langsung dari instruksi bahasa alami yang ambigu. | Ekstraksi terstruktur dari batasan implisit sebelum implementasi. |
-| **Verifikasi Logika** | Mengandalkan probabilitas model untuk mengisi celah; rentan terhadap logika yang tidak konsisten. | Menerapkan **Kriteria Validasi Biner** dalam spek untuk memastikan output deterministik. |
+| **Verifikasi Logika** | Mengandalkan probabilitas model untuk mengisi celah; rentan terhadap logika yang tidak konsisten. | Menerapkan **Kriteria Validasi Biner** dalam spesifikasi untuk memastikan output deterministik. |
 | **Manajemen Konteks** | Menggabungkan banyak lapisan (UI/Auth/Logika) dalam satu turn, meningkatkan degradasi konteks. | Menggunakan **Modularisasi Berbasis Fitur** untuk menjaga jendela konteks tetap fokus per tugas. |
 | **Strategi Pemulihan** | Penambalan (patching) heuristik pada kesalahan, yang menyebarkan utang teknis. | Menerapkan **Batas 3 Kali Percobaan** diikuti oleh **Git Rollback** otomatis ke keadaan terverifikasi. |
 | **Persistensi State** | Bersifat sementara; bergantung pada riwayat sesi langsung. | Bersifat persisten; menggunakan `progress.json` dan `decisions.md` (ADR) untuk menjaga state antar sesi. |
@@ -61,7 +64,7 @@ EDNA menggunakan penemuan sistematis untuk mengekstrak persyaratan. File `PRD.md
 #### **Phase 3: Module Specification**
 Modul didefinisikan dengan cakupan terbatas (biasanya di bawah 20 file). Setiap spesifikasi mencakup **Kriteria Lulus/Gagal Biner** untuk validasi objektif.
 
-#### **Phase 4: Loop Eksekusi**
+#### **Phase 4: Execution Loop**
 EDNA menghasilkan `agent_prompt.md` yang mengarahkan implementasi. Framework ini memaksakan tinjauan dependensi dan **gerbang validasi** otomatis (linting, pemeriksaan tipe, dan pemindaian keamanan).
 
 ---
@@ -93,7 +96,7 @@ sequenceDiagram
     EDNA->>User: Minta Review Arsitektur
     User->>EDNA: Setujui Arsitektur
     
-    Note over EDNA: Phase 3: Spek Modular
+    Note over EDNA: Phase 3: Granular Specs
     EDNA->>Plan: Isi reference/ & modules/ (Spek)
     
     EDNA->>User: Minta Review Rencana Akhir

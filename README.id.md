@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Elite AI Software Context Engineer Skill</strong><br/>
-  <em>"Blueprint adalah pembeda antara sistem yang kokoh dan keruntuhan arsitektur."</em>
+  <em>"Blueprint adalah pembeda antara sistem yang kokoh dan kegagalan arsitektur."</em>
 </p>
 
 <p align="center">
@@ -18,61 +18,61 @@
 
 ---
 
-## 💎 Manifesto EDNA
+## 💎 Prinsip EDNA
 
-Ide itu murah. **Eksekusi adalah tempat di mana kebanyakan proyek gagal.**
+Ide hanyalah langkah awal. **Eksekusi adalah tantangan sebenarnya.**
 
-Prompting sembarangan bukanlah *engineering*. Instruksi yang ambigu hanya akan menghasilkan halusinasi AI dan codebase yang berantakan. Agent EDNA adalah solusi untuk inefisiensi tersebut.
+Prompting sederhana bukanlah *engineering*. Instruksi yang ambigu seringkali menghasilkan kode yang tidak konsisten dan sulit dikelola. Agent EDNA hadir untuk mengatasi inefisiensi tersebut.
 
-EDNA merekayasa **konteks fidelitas tinggi** yang mengubah konsep mentah menjadi blueprint perangkat lunak yang presisi. Tanpa basa-basi, tanpa tebak-tebakan, dan pastinya **Zero-Bloat Engineering (Rekayasa Tanpa Fitur Mubazir).**
+EDNA merekayasa **konteks akurasi tinggi** untuk mengubah konsep menjadi blueprint perangkat lunak yang presisi. Tanpa tebak-tebakan dan fokus pada **Zero-Bloat Engineering (Rekayasa Tanpa Fitur Redundan).**
 
 ---
 
-## 🎭 EDNA vs. Ilusi "One-Shot"
+## 🎭 EDNA vs. Miskonsepsi "One-Shot"
 
-Jika Anda pikir satu prompt bisa membangun sistem yang kompleks, Anda sedang bermimpi, bukan berekayasa.
+Mengandalkan satu prompt untuk membangun sistem kompleks seringkali berakhir dengan penumpukan utang teknis.
 
-| Prompting Amatir | Pendekatan EDNA |
+| Prompting Umum | Pendekatan EDNA |
 |:--- |:--- |
-| *"Buatkan saya aplikasi keuangan aman tanpa kesalahan."* | *"Berhenti bicara. Ayo mulai Phase 0. Apa saja rantai risikonya? Presisi adalah kewajiban."* |
-| **Respon:** Boilerplate generik dan autentikasi yang rusak. | **Respon:** Blueprint deterministik multi-fase yang menghargai batas konteks. |
-| **Hasil:** Kegagalan utang teknis (*technical debt*). | **Hasil:** Build yang siap untuk produksi. |
+| *"Buatkan aplikasi keuangan aman tanpa kesalahan."* | *"Mulai dari Phase 0. Identifikasi lanskap risiko dan tentukan spesifikasi teknis secara presisi."* |
+| **Respon:** Kode boilerplate generik dengan risiko keamanan pada sistem autentikasi. | **Respon:** Blueprint deterministik multi-fase yang menghargai batasan jendela konteks. |
+| **Hasil:** Kegagalan struktur dan utang teknis yang tinggi. | **Hasil:** Build yang siap untuk tahap produksi. |
 
-> *"Keberuntungan berpihak pada mereka yang bersiap. Prompting berpihak pada mereka yang berharap. Kami tidak berharap; kami merekayasa."*
+> *"Persiapan yang matang adalah kunci. Kami tidak mengandalkan harapan; kami menggunakan engineering."*
 
 ---
 
 ## 🚀 Kenapa EDNA?
 
-*   **Skill Universal:** Terinstal secara global di Claude Code, Gemini CLI, Cursor, dan Windsurf.
-*   **Discovery yang Presisi:** EDNA mengekstrak persyaratan implisit hingga cakupan teknis menjadi jelas kristal.
-*   **Minimalist Architecture:** Jika suatu fitur tidak menambah nilai, itu adalah komponen redundan. Kami memangkasnya.
-*   **Dominasi Modular:** Kami memecah kompleksitas menjadi unit yang bisa diimplementasikan AI dengan akurasi tinggi.
+*   **Skill Universal:** Kompatibel dengan Claude Code, Gemini CLI, Cursor, dan Windsurf.
+*   **Analisis Persyaratan Presisi:** Mengekstrak kebutuhan teknis secara mendalam hingga cakupan proyek menjadi jelas.
+*   **Zero-Bloat Architecture:** Setiap fitur harus memberikan nilai tambah. Kami mengeliminasi komponen yang tidak diperlukan.
+*   **Modularitas Terukur:** Memecah kompleksitas menjadi unit-unit yang dapat diimplementasikan AI dengan akurasi maksimal.
 
 ---
 
-## 🛠️ Master Plan 5-Fase
+## 🛠️ Rencana Kerja 5-Fase
 
-| Fase | Tujuan | Deliverable |
+| Fase | Tujuan | Hasil (Deliverable) |
 |:---:|:--- |:--- |
-| **0** | **Foundation** | Audit lanskap & pemilihan mode proyek. |
-| **1** | **Discovery** | `PRD.md` — Sumber kebenaran tunggal. |
-| **2** | **Orchestration** | `modules.md` — Tulang punggung arsitektur. |
-| **3** | **Specification** | `modules/` — Spek modular yang teruji (binary-pass). |
-| **4** | **Execution** | `agent_prompt.md` — Direktif untuk agen pelaksana. |
+| **0** | **Foundation** | Audit lanskap teknis & pemilihan mode proyek. |
+| **1** | **Discovery** | `PRD.md` — Dokumen persyaratan utama. |
+| **2** | **Orchestration** | `modules.md` — Struktur arsitektur global. |
+| **3** | **Specification** | `modules/` — Spesifikasi modul teknis yang teruji. |
+| **4** | **Execution** | `agent_prompt.md` — Instruksi untuk agen pelaksana. |
 
 ---
 
 ## 📦 Panduan Instalasi
 
-### Jalur A: Global Otomatis (Direkomendasikan)
-Instal EDNA secara global ke agen AI pilihan Anda dengan satu perintah interaktif:
+### Jalur A: Otomatis (Direkomendasikan)
+Gunakan perintah interaktif untuk instalasi global:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/arinadi/EDNA/main/install.sh | bash
 ```
 
-### Jalur B: Global Manual
+### Jalur B: Manual Global
 Clone repositori ini ke direktori skill agen Anda:
 
 *   **Claude Code:** `~/.claude/skills/edna`
@@ -80,30 +80,30 @@ Clone repositori ini ke direktori skill agen Anda:
 *   **Antigravity:** `~/.antigravity/skills/edna`
 
 ### Jalur C: Level Proyek (Lokal)
-Untuk penggunaan spesifik di satu repositori, clone EDNA ke folder `.skills/` atau `skills/`. Kebanyakan agen modern akan mendeteksi skill lokal secara otomatis.
+Clone EDNA ke folder `.skills/` atau `skills/` pada proyek spesifik Anda.
 
 ---
 
-## 🛡️ Ketangguhan Terintegrasi
+## 🛡️ Keamanan & Ketangguhan
 
-*   **Auto-Recovery:** `git revert` otomatis setelah 3 kegagalan implementasi. Kami tidak mengirim kode rusak.
-*   **Resume State:** `progress.json` mencatat progres untuk pemulihan sesi yang mulus.
-*   **Binary Gates:** Kriteria lulus/gagal yang objektif. Ambiguitas tidak diizinkan.
+*   **Auto-Recovery:** Melakukan `git revert` otomatis setelah 3 kali kegagalan implementasi.
+*   **Resume State:** File `progress.json` memastikan pemulihan sesi yang lancar jika terjadi gangguan.
+*   **Binary Gates:** Kriteria validasi objektif (lulus/gagal) untuk menjaga kualitas output.
 
 ---
 
 ## 💋 Cara Memulai
 
-Berhenti berharap. Mulailah merekayasa.
+Berhenti menebak. Mulailah berekayasa.
 
 ```text
 "EDNA, rencanakan proyek baru."
 "Saya punya ide untuk [Nama Proyek]."
-"Ekstrak persyaratan saya untuk [Sistem]."
+"Analisis persyaratan teknis untuk [Sistem]."
 ```
 
 ---
 
 <p align="center">
-  Dirancang dengan Bangga untuk Ekselensi. <b>Zero-Bloat Architecture.</b>
+  Dirancang untuk Standar Kualitas Tinggi. <b>Zero-Bloat Architecture.</b>
 </p>
