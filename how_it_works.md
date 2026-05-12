@@ -3,25 +3,30 @@
 
 ---
 
-### Context Window Management 🌪️
+### Context Window Management
 LLM performance depends on the quality and volume of the provided context. Agent EDNA addresses specific technical constraints:
 
-*   **Context Window Limitations:** LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the "Lost in the Middle" effect.
-*   **Accuracy and Hallucination:** In long-running development cycles, models can lose track of early architectural constraints. This results in hallucinations where the AI proposes code that conflicts with the established global state.
-*   **Modular Isolation (Skill-Based Architecture):** On the `migrate-agent-to-skill` branch, EDNA evolves from a single large agent file to a modular **AI Skill**.
-    *   **Reference Splitting:** By moving phase-specific instructions into the `references/` folder, the agent only loads the core `SKILL.md` (~100 tokens) at startup.
-    *   **On-Demand Context:** Full phase details and templates are loaded only when relevant to the current task. This significantly reduces baseline token consumption and prevents context saturation.
-*   **Dependency-Based Execution:** Modules are executed in a strict dependency sequence. A feature is only considered "Done" when the design, frontend, and backend integration are verified together.
+*   **Context Window Limitations**
+    LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the **"Lost in the Middle"** effect where critical instructions are ignored.
+*   **Accuracy and Hallucination**
+    In long-running development cycles, models can lose track of early architectural constraints. This results in **hallucinations** where the AI proposes code that conflicts with the established global state.
+*   **Modular Isolation (Skill-Based Architecture)**
+    On the `migrate-agent-to-skill` branch, EDNA evolves from a single large agent file to a modular **AI Skill**.
+    > **Reference Splitting:** By moving phase-specific instructions into the `references/` folder, the agent only loads the core `SKILL.md` (~100 tokens) at startup.
+    >
+    > **On-Demand Context:** Full phase details and templates are loaded only when relevant to the current task. This significantly reduces baseline token consumption and prevents context saturation.
+*   **Dependency-Based Execution**
+    Modules are executed in a strict dependency sequence. A feature is only considered **"Done"** when the design, frontend, and backend integration are verified together.
 
 ---
 
-### Client-Skill Integration Architecture 🔌
+### Client-Skill Integration Architecture
 Agent EDNA operates as a standardized **AI Skill**, following a lifecycle of discovery, semantic matching, and execution within the host agent (Claude Code, Gemini CLI, etc.).
 
 #### **Discovery & Indexing**
-Upon startup, the host agent scans predefined directories (e.g., `~/.claude/skills/`). It parses the YAML frontmatter in `SKILL.md` to index:
+Upon startup, the host agent scans predefined directories (e.g., `~/.claude/skills/`). It parses the **YAML frontmatter** in `SKILL.md` to index:
 *   **Skill Identity:** The internal name (`edna`).
-*   **Activation Triggers:** Descriptive keywords used for semantic matching during natural language processing.
+*   **Activation Triggers:** Descriptive keywords used for semantic matching.
 *   **Tool Manifest:** A declaration of allowed system tools (e.g., `read_file`, `write_file`, `run_shell_command`).
 
 #### **Execution Lifecycle**
@@ -31,7 +36,7 @@ Upon startup, the host agent scans predefined directories (e.g., `~/.claude/skil
 
 ---
 
-### Comparative Analysis: Unmanaged Inference vs. Context Engineering 🧪
+### Comparative Analysis: Unmanaged Inference vs. Context Engineering
 This section contrasts unmanaged LLM generation (one-shot prompting) with managed context engineering.
 
 | Technical Aspect | One-Shot Prompting | Context-Managed Framework (EDNA) |
@@ -44,10 +49,10 @@ This section contrasts unmanaged LLM generation (one-shot prompting) with manage
 
 ---
 
-### Implementation Phases 🏛️
+### Implementation Phases
 
 #### **Phase 0 & 1: Requirement Extraction**
-EDNA uses structured interrogation to extract requirements. The resulting `PRD.md` serves as the primary technical specification.
+EDNA uses structured interrogation to extract requirements. The resulting `PRD.md` serves as the primary **technical specification**.
 
 #### **Phase 2: Global Architecture**
 *   **Storage-Agnostic Modeling:** Data entities are defined by relationships and field types. Implementation details are deferred to ensure core logic remains decoupled.
@@ -57,11 +62,11 @@ EDNA uses structured interrogation to extract requirements. The resulting `PRD.m
 Individual modules are defined with a limited scope (typically under 20 files). Each specification includes **Binary Pass/Fail Criteria** for objective validation.
 
 #### **Phase 4: Execution Loop**
-EDNA generates an `agent_prompt.md` that directs implementation. It enforces dependency reviews and automated validation gates (linting, type-checking, and security scans).
+EDNA generates an `agent_prompt.md` that directs implementation. It enforces dependency reviews and automated **validation gates** (linting, type-checking, and security scans).
 
 ---
 
-### Operational Workflow 🔄
+### Operational Workflow
 
 ```mermaid
 sequenceDiagram
