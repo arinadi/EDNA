@@ -10,11 +10,8 @@ Performa LLM bergantung pada kualitas dan fidelitas konteks yang diberikan. Agen
     LLM memiliki batas token yang terbatas. Akurasi menurun saat jendela konteks mendekati kapasitas maksimal, sering kali memicu efek **"Lost in the Middle"** di mana model mengabaikan instruksi kritis.
 *   **Akurasi dan Halusinasi**
     Dalam siklus pengembangan yang panjang, model dapat kehilangan jejak batasan arsitektur awal. Hal ini menyebabkan **halusinasi** di mana AI menghasilkan kode yang bertentangan dengan keadaan global yang telah ditetapkan.
-*   **Isolasi Modular (Strategi Feature-First)**
-    Berbeda dengan pendekatan berlapis tradisional (Frontend vs Backend), EDNA menerapkan **Modularisasi Berbasis Fitur**. Setiap modul mewakili fitur yang lengkap dan terintegrasi (Desain + Logika). 
-    > **Rasional:** Pengembangan berbasis lapisan sering kali menyebabkan **"Utang Dummy"**, di mana komponen UI tetap terputus dari logika backend. 
-    >
-    > **Integrasi Fullstack:** Dengan memberikan desain dan logika secara bersamaan, EDNA memastikan komponen berfungsi sejak awal, mencegah **"efek silo"** di mana pengembang hanya fokus pada lapisan isolasi masing-masing.
+*   **Isolasi Modular (Arsitektur Berbasis Skill)**
+    EDNA beroperasi sebagai **AI Skill** modular, melampaui definisi agen monolitik.
 *   **Eksekusi Berbasis Dependensi**
     Modul dieksekusi dalam urutan dependensi yang ketat. Sebuah fitur hanya dianggap **"Selesai"** jika desain, frontend, dan integrasi backend telah diverifikasi bersama.
 
