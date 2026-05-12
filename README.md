@@ -6,13 +6,13 @@
 
 <p align="center">
   <strong>The Elite AI Software Context Engineer Skill</strong><br/>
-  <em>"Blueprints are the difference between a robust system and an architectural collapse."</em>
+  <em>"Blueprints are the difference between a masterpiece and a tragedy."</em>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Format-AI--Skill-blueviolet?style=for-the-badge" alt="Format" />
   <img src="https://img.shields.io/badge/Status-Elite-gold?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Capes-NONE-red?style=for-the-badge" alt="No Capes" />
+  <img src="https://img.shields.io/badge/Architecture-Zero--Bloat-red?style=for-the-badge" alt="Zero-Bloat Engineering" />
   <img src="https://img.shields.io/badge/Compatibility-Claude--Gemini--Cursor-brightgreen?style=for-the-badge" alt="Compatibility" />
 </p>
 
@@ -20,23 +20,23 @@
 
 ## 💎 The EDNA Manifesto
 
-Ideas are easy. **Execution is where most projects fail.**
+Ideas are easy. **Execution is where amateurs fail.**
 
-Naive prompting is not engineering. Ambiguous instructions lead to hallucinatory results and fragmented codebases. Agent EDNA is the solution to that inefficiency.
+Most people think "prompting" is a magic wand. They toss a vague sentence at an LLM and wonder why the result is a hallucinatory mess. Agent EDNA is the cure for that delusion. 
 
-She engineers **high-fidelity context** that transforms raw concepts into precise software blueprints. No fluff, no guessing, and absolutely **NO CAPES.**
+She creates **high-fidelity context** that turns raw ideas into solid software blueprints. No fluff, no guessing, and absolutely **Zero-Bloat Engineering.**
 
 ---
 
-## 🎭 EDNA vs. The "One-Shot" Fallacy
+## 🎭 EDNA vs. The "One-Shot" Delusion
 
-If you think a single prompt can build a complex system, you are a dreamer, not an engineer.
+If you think a single prompt can build a system, you're not an engineer—you're a dreamer.
 
-| Amateur Prompting | The EDNA Approach |
+| The Amateur Prompt | The EDNA Approach |
 |:--- |:--- |
-| *"Build me a secure finance app with no mistakes."* | *"Stop talking. Let's begin Phase 0. What are the risk chains? Precision is mandatory."* |
-| **Response:** Generic boilerplate and broken authentication. | **Response:** A deterministic, multi-phase blueprint that respects context limits. |
-| **Result:** A failure of technical debt. | **Result:** A production-ready build. |
+| *"Build me a secure finance app with no mistakes."* | *"Stop talking. Let's begin Phase 0. Who are the users? What are the risk chains? Precision, or nothing."* |
+| **Response:** 300 lines of buggy boilerplate and a broken login page. | **Response:** A deterministic, multi-phase blueprint that actually fits in a context window. |
+| **Result:** A tragedy of technical debt. | **Result:** A production-ready masterpiece. |
 
 > *"Luck favors the prepared. Prompting favors the hopeful. We don't hope; we engineer."*
 
@@ -44,14 +44,18 @@ If you think a single prompt can build a complex system, you are a dreamer, not 
 
 ## 🚀 Why EDNA?
 
+Because "good enough" is just another word for "broken":
+
 *   **Universal Skill:** Installs globally into Claude Code, Gemini CLI, Cursor, and Windsurf.
-*   **Precision Discovery:** She extracts implicit requirements until the technical scope is clear.
-*   **Zero-Bloat (No Capes):** If a feature doesn't add value, it is a "cape." We eliminate it.
-*   **Modular Dominance:** We break complexity into units the AI can implement with high accuracy.
+*   **Precision Discovery:** She interrogates your vagueness until the requirements are crystalline.
+*   **Minimalist Architecture:** If a feature doesn't add value, it is redundant. We eliminate it.
+*   **Modular Dominance:** We break complexity into units the AI can actually understand without hallucinating.
 
 ---
 
 ## 🛠️ The 5-Phase Master Plan
+
+EDNA doesn't wing it. She follows a strict lifecycle:
 
 | Phase | Purpose | Deliverable |
 |:---:|:--- |:--- |
@@ -59,36 +63,25 @@ If you think a single prompt can build a complex system, you are a dreamer, not 
 | **1** | **Discovery** | `PRD.md` — The source of truth. |
 | **2** | **Orchestration** | `modules.md` — The architectural backbone. |
 | **3** | **Specification** | `modules/` — Testable, binary-pass specs. |
-| **4** | **Execution** | `agent_prompt.md` — The implementation directive. |
+| **4** | **Execution** | `agent_prompt.md` — The implementer's directive. |
 
 ---
 
-## 📦 Installation Guide
+## 📦 Global Installation
 
-### Path A: Automatic Global (Recommended)
-Install EDNA globally to your preferred AI agent with one interactive command:
+Don't manually copy-paste like a caveman. Install EDNA globally with one command:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/arinadi/EDNA/main/install.sh | bash
 ```
 
-### Path B: Manual Global
-Clone this repository into your agent's skill directory:
-
-*   **Claude Code:** `~/.claude/skills/edna`
-*   **Gemini CLI:** `~/.gemini/skills/edna`
-*   **Antigravity:** `~/.antigravity/skills/edna`
-
-### Path C: Project-Level (Local)
-For repository-specific usage, clone EDNA into a `.skills/` or `skills/` folder. Most modern agents will auto-detect local skills.
-
 ---
 
 ## 🛡️ Built-in Resilience
 
-*   **Auto-Recovery:** Automatic `git revert` after 3 failed implementation attempts.
-*   **Resume State:** `progress.json` tracks progress for seamless session recovery.
-*   **Binary Gates:** Objective pass/fail criteria. Ambiguity is not allowed.
+*   **Auto-Recovery:** Automatic `git revert` after 3 failures. We don't ship broken code.
+*   **Resume State:** `progress.json` knows where you left off. Crashes are irrelevant.
+*   **Binary Gates:** Logic is either "Correct" or "Fail." There is no "Maybe."
 
 ---
 
@@ -99,11 +92,13 @@ Stop wishing. Start engineering.
 ```text
 "EDNA, plan a new project."
 "I have an idea for [Project Name]."
-"Extract my requirements for [System]."
+"Interrogate my requirements for [System]."
 ```
+
+> *"Execution is everything. Start creating. I'll be here ensuring it's correct."*
 
 ---
 
 <p align="center">
-  Proudly Engineered for Excellence. <b>No Capes Allowed.</b>
+  Proudly Engineered for Excellence. <b>Zero-Bloat Architecture.</b>
 </p>

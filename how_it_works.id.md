@@ -32,10 +32,10 @@ Saat startup, agen host memindai direktori yang telah ditentukan. Agen tersebut 
 #### **Siklus Hidup Eksekusi**
 1.  **Pemicu Semantik:** Saat input pengguna cocok dengan deskripsi skill, agen host memuat seluruh set instruksi dari `SKILL.md` ke dalam konteks aktifnya.
 2.  **Isolasi Konteks (Berbasis Skill):** Untuk mencegah pembengkakan token, EDNA menggunakan pembagian referensi modular:
-    > **Pemisahan Referensi:** Dengan memindahkan instruksi spesifik fase ke folder `references/`, agen hanya memuat metadata identitas inti saat startup.
+    > **Pemisahan Referensi:** Dengan memindahkan instruksi spesifik fase ke folder `references/` agar agen hanya memuat metadata identitas inti saat startup.
     >
     > **Konteks On-Demand:** Detail fase lengkap dan template hanya dimuat saat relevan dengan tugas saat ini. Hal ini secara signifikan mengurangi konsumsi token dasar.
-3.  **Handshake Perizinan:** Agen host memberikan akses ke alat tertentu yang diminta skill, memungkinkannya untuk memanipulasi filesystem lokal dan terminal.
+3.  **Handshake Perizinan:** Agen host memberikan akses ke alat tertentu yang diminta skill, memungkinkannya untuk memanipulasi filesystem lokal secara langsung.
 
 ---
 
@@ -57,14 +57,14 @@ Bagian ini membandingkan pembuatan kode LLM tanpa pengelolaan (one-shot promptin
 #### **Requirement Discovery**
 EDNA menggunakan penemuan sistematis untuk mengekstrak persyaratan. File `PRD.md` yang dihasilkan berfungsi sebagai **spesifikasi teknis** utama.
 
-#### **Arsitektur Global**
+#### **Phase 2: Global Architecture**
 *   **Pemodelan Agnostik Penyimpanan:** Entitas data didefinisikan berdasarkan hubungan dan tipe field. Detail implementasi ditangguhkan untuk menjaga logika inti tetap terlepas (decoupled).
 *   **Analisis Risiko:** Identifikasi dependensi kritis dan potensi kegagalan beruntun di seluruh graf modul.
 
-#### **Spesifikasi Modul**
+#### **Phase 3: Module Specification**
 Modul didefinisikan dengan cakupan terbatas (biasanya di bawah 20 file). Setiap spesifikasi mencakup **Kriteria Lulus/Gagal Biner** untuk validasi objektif.
 
-#### **Loop Eksekusi**
+#### **Phase 4: Loop Eksekusi**
 EDNA menghasilkan `agent_prompt.md` yang mengarahkan implementasi. Framework ini memaksakan tinjauan dependensi dan **gerbang validasi** otomatis (linting, pemeriksaan tipe, dan pemindaian keamanan).
 
 ---
@@ -85,13 +85,13 @@ sequenceDiagram
     EDNA->>EDNA: Audit Lanskap & Pilih Mode
     
     Note over EDNA: Phase 1: Requirements & PRD
-    EDNA->>User: Discovery Persyaratan
+    EDNA->>User: Requirement Discovery
     User->>EDNA: Input Detail
     EDNA->>Plan: Buat PRD.md
     EDNA->>User: Minta Review PRD
     User->>EDNA: Setujui PRD
     
-    Note over EDNA: Phase 2: Arsitektur Global
+    Note over EDNA: Phase 2: Global Architecture
     EDNA->>Plan: Buat modules.md (Data Model & Tech)
     EDNA->>User: Minta Review Arsitektur
     User->>EDNA: Setujui Arsitektur

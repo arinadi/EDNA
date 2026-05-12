@@ -46,7 +46,7 @@ This section contrasts unmanaged LLM generation (one-shot prompting) with a mana
 |:--- |:--- |:--- |
 | **Input Analysis** | Direct code generation from ambiguous natural language instructions. | Structured extraction of implicit constraints prior to implementation. |
 | **Logic Verification** | Relies on model probability for gap filling; prone to inconsistent logic. | Enforces **Binary Validation Criteria** within specs to ensure deterministic output. |
-| **Context Management** | Combines multiple layers (UI/Auth/Logic) in a single turn, increasing context degradation. | Uses **Feature-Driven Modularization** to maintain a focused context window per task. |
+| **Context Management** | Combines multiple layers in a single turn, increasing context degradation. | Uses **Feature-Driven Modularization** to maintain a focused context window per task. |
 | **Recovery Strategy** | Heuristic patching of errors, which propagates technical debt. | Implements a **3-Attempt Limit** followed by an automated **Git Rollback** to a verified state. |
 | **State Persistence** | Transient; depends on immediate session history. | Persistent; uses `progress.json` and `decisions.md` (ADR) to maintain state across sessions. |
 
@@ -54,7 +54,7 @@ This section contrasts unmanaged LLM generation (one-shot prompting) with a mana
 
 ### Implementation Phases
 
-#### **Phase 0 & 1: Requirement Discovery**
+#### **Requirement Discovery**
 EDNA uses systematic discovery to extract requirements. The resulting `PRD.md` serves as the primary **technical specification**.
 
 #### **Phase 2: Global Architecture**

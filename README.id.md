@@ -12,7 +12,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Format-AI--Skill-blueviolet?style=for-the-badge" alt="Format" />
   <img src="https://img.shields.io/badge/Status-Elite-gold?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Capes-NONE-red?style=for-the-badge" alt="No Capes" />
+  <img src="https://img.shields.io/badge/Architecture-Zero--Bloat-red?style=for-the-badge" alt="Zero-Bloat Engineering" />
   <img src="https://img.shields.io/badge/Compatibility-Claude--Gemini--Cursor-brightgreen?style=for-the-badge" alt="Compatibility" />
 </p>
 
@@ -24,7 +24,7 @@ Ide itu murah. **Eksekusi adalah tempat di mana kebanyakan proyek gagal.**
 
 Prompting sembarangan bukanlah *engineering*. Instruksi yang ambigu hanya akan menghasilkan halusinasi AI dan codebase yang berantakan. Agent EDNA adalah solusi untuk inefisiensi tersebut.
 
-EDNA merekayasa **konteks fidelitas tinggi** yang mengubah konsep mentah menjadi blueprint perangkat lunak yang presisi. Tanpa basa-basi, tanpa tebak-tebakan, dan pastinya **NO CAPES (Tanpa Fitur Mubazir).**
+EDNA merekayasa **konteks fidelitas tinggi** yang mengubah konsep mentah menjadi blueprint perangkat lunak yang presisi. Tanpa basa-basi, tanpa tebak-tebakan, dan pastinya **Zero-Bloat Engineering (Rekayasa Tanpa Fitur Mubazir).**
 
 ---
 
@@ -46,7 +46,7 @@ Jika Anda pikir satu prompt bisa membangun sistem yang kompleks, Anda sedang ber
 
 *   **Skill Universal:** Terinstal secara global di Claude Code, Gemini CLI, Cursor, dan Windsurf.
 *   **Discovery yang Presisi:** EDNA mengekstrak persyaratan implisit hingga cakupan teknis menjadi jelas kristal.
-*   **Zero-Bloat (No Capes):** Jika suatu fitur tidak menambah nilai, itu adalah "cape". Kami memangkasnya.
+*   **Minimalist Architecture:** Jika suatu fitur tidak menambah nilai, itu adalah komponen redundan. Kami memangkasnya.
 *   **Dominasi Modular:** Kami memecah kompleksitas menjadi unit yang bisa diimplementasikan AI dengan akurasi tinggi.
 
 ---
@@ -105,5 +105,5 @@ Berhenti berharap. Mulailah merekayasa.
 ---
 
 <p align="center">
-  Dirancang dengan Bangga untuk Ekselensi. <b>No Capes Allowed.</b>
+  Dirancang dengan Bangga untuk Ekselensi. <b>Zero-Bloat Architecture.</b>
 </p>
