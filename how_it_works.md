@@ -10,8 +10,8 @@ LLM performance depends on the quality and fidelity of the provided context. Age
     LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the **"Lost in the Middle"** effect where the model ignores critical instructions.
 *   **Accuracy and Hallucination**
     In extended development cycles, models can lose track of initial architectural constraints. This leads to **hallucinations** where the AI generates code that conflicts with the established global state.
-*   **Modular Isolation (Feature-First Strategy)**
-    Unlike traditional layer-based approaches (Frontend vs. Backend), EDNA enforces **Feature-Driven Modularization**. Each module represents a complete, integrated feature (Design + Logic). 
+*   **Modular Isolation (Feature-First Skill Architecture)**
+    EDNA operates as a modular **AI Skill**, enforcing **Feature-Driven Modularization**. Each module represents a complete, integrated feature (Design + Logic). 
     > **Rationale:** Layer-based development often leads to **"Dummy Debt,"** where UI components remain disconnected from backend logic. 
     >
     > **Fullstack Integration:** By delivering design and logic together, EDNA ensures components are functional from the start, preventing the **"silo effect"** where developers focus only on isolated layers.
