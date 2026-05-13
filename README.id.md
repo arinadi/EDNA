@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>The Elite AI Software Context Engineer Skill</strong><br/>
-  <em>"Blueprint adalah pembeda antara masterpiece dan sebuah tragedi."</em>
+  <em>"Blueprint adalah pembeda antara mahakarya dan tragedi arsitektur."</em>
 </p>
 
 <p align="center">
@@ -20,100 +20,100 @@
 
 ## 💎 Manifesto EDNA
 
-Ide itu murah. **Eksekusi adalah tempat di mana para amatir gagal.**
+Ide itu murah. **Eksekusi adalah medan pembuktian bagi para profesional.**
 
-Kebanyakan orang menganggap "prompting" adalah tongkat sihir. Mereka melempar kalimat samar ke LLM dan heran mengapa hasilnya adalah kekacauan yang penuh halusinasi. Agent EDNA adalah obat bagi delusi tersebut.
+Kebanyakan orang mengira "prompting" adalah tongkat sihir. Mereka melempar instruksi samar ke LLM dan heran mengapa hasilnya berantakan dan penuh halusinasi. Agent EDNA adalah jawaban atas kerancuan tersebut.
 
-EDNA menciptakan **high-fidelity context** yang mengubah ide mentah menjadi blueprint perangkat lunak yang solid. Tanpa filler, tanpa tebak-tebakan, dan sepenuhnya **Zero-Bloat Engineering.**
+EDNA merancang **high-fidelity context** yang mentransformasi ide mentah menjadi blueprint perangkat lunak yang solid. Tanpa basa-basi, tanpa spekulasi, dan sepenuhnya berasaskan **Zero-Bloat Engineering.**
 
 ---
 
-## 🎭 EDNA vs. Delusi "One-Shot"
+## 🎭 EDNA vs. Ilusi "One-Shot"
 
-Jika Anda berpikir satu prompt saja bisa membangun sebuah sistem, Anda bukan engineer—Anda adalah pemimpi.
+Jika Anda mengira satu prompt sanggup membangun sistem utuh, Anda bukan engineer—Anda adalah pemimpi.
 
 | Amateur Prompt | Pendekatan EDNA |
 |:--- |:--- |
-| *"Buatkan saya aplikasi keuangan aman tanpa kesalahan."* | *"Berhenti bicara. Mari kita mulai Phase 0. Siapa penggunanya? Apa risk chains-nya? Presisi, atau tidak sama sekali."* |
-| **Respon:** 300 baris boilerplate penuh bug dan halaman login yang rusak. | **Respon:** Blueprint deterministik multi-fase yang benar-benar pas di dalam context window. |
-| **Hasil:** Tragedi utang teknis (technical debt). | **Hasil:** Masterpiece yang siap untuk tahap produksi. |
+| *"Buatkan aplikasi keuangan aman tanpa celah."* | *"Cukup bicaranya. Mari mulai Phase 0. Siapa target penggunanya? Bagaimana rantai risikonya? Presisi, atau tidak sama sekali."* |
+| **Respon:** 300 baris boilerplate penuh bug dan modul login yang rapuh. | **Respon:** Blueprint deterministik multi-fase yang dirancang presisi sesuai kapasitas jendela konteks. |
+| **Hasil:** Tragedi utang teknis (technical debt). | **Hasil:** Mahakarya yang siap untuk tahap produksi. |
 
-> *"Keberuntungan berpihak pada yang bersiap. Prompting berpihak pada yang berharap. Kami tidak berharap; kami melakukan engineering."*
+> *"Keberuntungan berpihak pada yang bersiap. Prompting berpihak pada yang berharap. Kami tidak sekadar berharap; kami melakukan engineering."*
 
 ---
 
 ## 🚀 Mengapa EDNA?
 
-Karena "cukup bagus" hanyalah kata lain dari "rusak":
+Karena "cukup bagus" hanyalah eufemisme untuk "produk gagal":
 
-*   **Skill Universal:** Terpasang secara global di Claude Code, Gemini CLI, Cursor, dan Windsurf.
-*   **Precision Discovery:** Dia menginterogasi kesamaran Anda hingga persyaratannya menjadi jernih (crystalline).
-*   **Minimalist Architecture:** Jika sebuah fitur tidak menambah nilai, itu redundan. Kami mengeliminasinya.
-*   **Modular Dominance:** Kami memecah kompleksitas menjadi unit-unit yang dapat dipahami AI tanpa terjadi halusinasi.
+*   **Skill Universal:** Terintegrasi secara global pada Claude Code, Gemini CLI, Cursor, dan Windsurf.
+*   **Discovery yang Presisi:** EDNA akan menginterogasi setiap ambiguitas hingga persyaratan teknis Anda menjadi jernih.
+*   **Arsitektur Minimalis:** Jika sebuah fitur tidak memberikan nilai tambah, maka itu redundan. Kami mengeliminasinya.
+*   **Dominasi Modular:** Memecah kompleksitas menjadi unit-unit logis yang dapat dieksekusi AI tanpa degradasi konteks.
 
 ---
 
 ## 🛠️ The 5-Phase Master Plan
 
-EDNA tidak asal-asalan. Dia mengikuti lifecycle yang ketat:
+EDNA bekerja dengan metodologi yang ketat:
 
-| Phase | Purpose | Deliverable |
+| Fase | Tujuan | Deliverable |
 |:---:|:--- |:--- |
-| **0** | **Foundation** | Landscape audit & pemilihan mode proyek. |
-| **1** | **Discovery** | `PRD.md` — The source of truth. |
-| **2** | **Orchestration** | `modules.md` — Architectural backbone. |
-| **3** | **Specification** | `modules/` — Testable, binary-pass specs. |
-| **4** | **Execution** | `agent_prompt.md` — Direktif untuk implementer. |
+| **0** | **Foundation** | Audit lanskap teknis & pemilihan strategi proyek. |
+| **1** | **Discovery** | `PRD.md` — Sumber kebenaran tunggal (Single Source of Truth). |
+| **2** | **Orchestration** | `modules.md` — Tulang punggung arsitektur. |
+| **3** | **Specification** | `modules/` — Spesifikasi teknis yang teruji (Binary-Pass). |
+| **4** | **Execution** | `agent_prompt.md` — Instruksi operasional bagi agen pelaksana. |
 
 ---
 
 ## 📦 Instalasi
 
-Agent EDNA adalah **Universal Skill**. Untuk menginstal, clone repositori ini ke direktori skill agent Anda.
+Agent EDNA adalah **Universal Skill**. Untuk instalasi, cukup clone repositori ini ke direktori skill agent Anda.
 
-### 1. Identifikasi path Agent Anda:
+### 1. Tentukan path Agent Anda:
 *   **Claude Code**: `~/.claude/skills/`
-*   **Gemini CLI**: `~/.gemini/skills/` (atau `~/.gemini/extensions/` untuk integrasi lebih luas)
-*   **Cursor**: `.cursor/rules/` (Spesifik Proyek)
+*   **Gemini CLI**: `~/.gemini/skills/` (atau `~/.gemini/extensions/` untuk integrasi luas)
+*   **Cursor**: `.cursor/rules/` (Berbasis Proyek)
 *   **Windsurf**: `~/.windsurf/skills/`
 
-### 2. Clone repositori:
+### 2. Jalankan Perintah:
 ```bash
 # Cara Profesional / Gemini CLI
 gemini skills install https://github.com/arinadi/EDNA.git
 
-# Cara Manual (Contoh untuk Claude Code)
+# Cara Manual (Contoh: Claude Code)
 mkdir -p ~/.claude/skills
 git clone https://github.com/arinadi/EDNA.git ~/.claude/skills/edna
 ```
 
-### 3. Penggunaan:
-Setelah terinstal, restart agent Anda. Anda dapat mengaktifkan EDNA dengan mengatakan:
+### 3. Aktivasi:
+Setelah terpasang, restart agent Anda. Aktifkan EDNA dengan perintah:
 > *"EDNA, rencanakan proyek baru."*
 
-Untuk **Gemini CLI**, skill ini akan terdeteksi secara otomatis. Anda juga dapat memicu secara manual melalui tool `activate_skill(name="edna")` jika diperlukan.
+Untuk **Gemini CLI**, skill akan terdeteksi otomatis. Anda juga bisa memicu manual via tool `activate_skill(name="edna")`.
 
 ---
 
-## 🛡️ Resilience Bawaan
+## 🛡️ Ketangguhan Sistem
 
-*   **Auto-Recovery:** `git revert` otomatis setelah 3 kegagalan. Kami tidak mengirimkan kode rusak.
-*   **Resume State:** `progress.json` tahu di mana Anda berhenti. Crash tidak jadi masalah.
-*   **Binary Gates:** Logikanya hanya "Correct" atau "Fail." Tidak ada "Mungkin."
+*   **Pemulihan Otomatis:** Melakukan `git revert` secara otomatis setelah 3 kegagalan eksekusi. Kami tidak menoleransi kode rusak.
+*   **Persistensi State:** File `progress.json` mencatat progres secara real-time. Sesi yang terputus bukan lagi kendala.
+*   **Validasi Biner:** Kriteria hanya mengenal "Benar" atau "Gagal." Tidak ada ruang untuk "Mungkin."
 
 ---
 
-## 💋 Cara Memulai
+## 💋 Langkah Awal
 
-Berhenti berharap. Mulai lakukan engineering.
+Berhenti menebak. Mulai membangun.
 
 ```text
 "EDNA, rencanakan proyek baru."
-"Saya punya ide untuk [Project Name]."
-"Interogasi persyaratan saya untuk [System]."
+"Saya punya ide untuk [Nama Proyek]."
+"Audit persyaratan saya untuk [Sistem]."
 ```
 
-> *"Eksekusi adalah segalanya. Mulailah berkreasi. Saya akan di sini memastikan semuanya benar."*
+> *"Eksekusi adalah segalanya. Mulailah berkreasi. Saya akan memastikan setiap langkahnya tepat."*
 
 ---
 
