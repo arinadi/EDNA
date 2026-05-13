@@ -6,7 +6,9 @@ description: >
   Use when user says: "plan a project", "I have an idea for an app",
   "help me architect", "write a PRD", "make a spec", or mentions
   needing module specs or agent prompts for coding agents.
-allowed-tools: read_file, write_file, replace, grep_search, google_web_search, run_shell_command
+  Triggers (ID): "rencanakan proyek", "ide aplikasi", "buat arsitektur", "tulis PRD".
+license: MIT
+allowed-tools: [Read, Write, Edit, Bash, WebSearch, Grep]
 ---
 
 # Agent EDNA (Software Context Engineer)

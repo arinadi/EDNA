@@ -67,17 +67,35 @@ EDNA doesn't wing it. She follows a strict lifecycle:
 
 ---
 
-## 📦 Global Installation
+## 📦 Installation
 
-Don't manually copy-paste like a caveman. Install EDNA globally with one command:
+Agent EDNA is a **Universal Skill**. To install, clone this repository into your agent's skills directory.
 
+### 1. Identify your Agent's path:
+*   **Claude Code**: `~/.claude/skills/`
+*   **Gemini CLI**: `~/.gemini/skills/` (or `~/.gemini/extensions/` for broader integration)
+*   **Cursor**: `.cursor/rules/` (Project-specific)
+*   **Windsurf**: `~/.windsurf/skills/`
+
+### 2. Clone the repository:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/arinadi/EDNA/main/install.sh | bash
+# Professional / Gemini CLI way
+gemini skills install https://github.com/arinadi/EDNA.git
+
+# Manual way (Example for Claude Code)
+mkdir -p ~/.claude/skills
+git clone https://github.com/arinadi/EDNA.git ~/.claude/skills/edna
 ```
+
+### 3. Usage:
+Once installed, restart your agent. You can activate EDNA by saying:
+> *"EDNA, plan a new project."*
+
+For **Gemini CLI**, the skill is automatically discovered. You can also manually trigger it via the `activate_skill(name="edna")` tool if needed.
 
 ---
 
-## 🛡️ Built-in Resilience
+## 🛠️ The 5-Phase Master Plan
 
 *   **Auto-Recovery:** Automatic `git revert` after 3 failures. We don't ship broken code.
 *   **Resume State:** `progress.json` knows where you left off. Crashes are irrelevant.
