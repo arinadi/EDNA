@@ -28,15 +28,15 @@ EDNA merancang **high-fidelity context** yang mentransformasi ide mentah menjadi
 
 ---
 
-## 🎭 EDNA vs. Ilusi "One-Shot"
+## 🎭 EDNA vs. Ilusi One-Shot
 
 Jika Anda mengira satu prompt sanggup membangun sistem utuh, Anda bukan engineer—Anda adalah pemimpi.
 
 | Amateur Prompt | Pendekatan EDNA |
 |:--- |:--- |
 | *"Buatkan aplikasi keuangan aman tanpa celah."* | *"Cukup bicaranya. Mari mulai Phase 0. Siapa target penggunanya? Bagaimana rantai risikonya? Presisi, atau tidak sama sekali."* |
-| **Respon:** 300 baris boilerplate penuh bug dan modul login yang rapuh. | **Respon:** Blueprint deterministik multi-fase yang dirancang presisi sesuai kapasitas jendela konteks. |
-| **Hasil:** Tragedi utang teknis (technical debt). | **Hasil:** Mahakarya yang siap untuk tahap produksi. |
+| **Respon:** 300 baris boilerplate penuh bug dan modul login yang rapuh. | **Respon:** Blueprint deterministik multi-fase yang dirancang presisi sesuai kapasitas Context Window. |
+| **Hasil:** Tragedi Technical Debt. | **Hasil:** Mahakarya yang siap untuk tahap produksi. |
 
 > *"Keberuntungan berpihak pada yang bersiap. Prompting berpihak pada yang berharap. Kami tidak sekadar berharap; kami melakukan engineering."*
 
@@ -44,12 +44,12 @@ Jika Anda mengira satu prompt sanggup membangun sistem utuh, Anda bukan engineer
 
 ## 🚀 Mengapa EDNA?
 
-Karena "cukup bagus" hanyalah eufemisme untuk "produk gagal":
+Karena "cukup bagus" hanyalah eufemisme untuk produk gagal:
 
 *   **Skill Universal:** Terintegrasi secara global pada Claude Code, Gemini CLI, Cursor, dan Windsurf.
 *   **Discovery yang Presisi:** EDNA akan menginterogasi setiap ambiguitas hingga persyaratan teknis Anda menjadi jernih.
 *   **Arsitektur Minimalis:** Jika sebuah fitur tidak memberikan nilai tambah, maka itu redundan. Kami mengeliminasinya.
-*   **Dominasi Modular:** Memecah kompleksitas menjadi unit-unit logis yang dapat dieksekusi AI tanpa degradasi konteks.
+*   **Modular Dominance:** Memecah kompleksitas menjadi unit-unit logis yang dapat dieksekusi AI tanpa degradasi konteks.
 
 ---
 
@@ -60,7 +60,7 @@ EDNA bekerja dengan metodologi yang ketat:
 | Fase | Tujuan | Deliverable |
 |:---:|:--- |:--- |
 | **0** | **Foundation** | Audit lanskap teknis & pemilihan strategi proyek. |
-| **1** | **Discovery** | `PRD.md` — Sumber kebenaran tunggal (Single Source of Truth). |
+| **1** | **Discovery** | `PRD.md` — Single Source of Truth. |
 | **2** | **Orchestration** | `modules.md` — Tulang punggung arsitektur. |
 | **3** | **Specification** | `modules/` — Spesifikasi teknis yang teruji (Binary-Pass). |
 | **4** | **Execution** | `agent_prompt.md` — Instruksi operasional bagi agen pelaksana. |
@@ -99,7 +99,7 @@ Untuk **Gemini CLI**, skill akan terdeteksi otomatis. Anda juga bisa memicu manu
 
 *   **Pemulihan Otomatis:** Melakukan `git revert` secara otomatis setelah 3 kegagalan eksekusi. Kami tidak menoleransi kode rusak.
 *   **Persistensi State:** File `progress.json` mencatat progres secara real-time. Sesi yang terputus bukan lagi kendala.
-*   **Validasi Biner:** Kriteria hanya mengenal "Benar" atau "Gagal." Tidak ada ruang untuk "Mungkin."
+*   **Validasi Biner:** Kriteria hanya mengenal Benar atau Gagal. Tidak ada ruang untuk "Mungkin."
 
 ---
 
