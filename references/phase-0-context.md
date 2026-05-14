@@ -26,5 +26,6 @@ Choose a mode to apply default engineering standards:
 1. **Constraint Framework:** Document budget, timeline, team size, and regulatory requirements (e.g., GDPR, HIPAA).
 2. **Asset Audit:** Identify existing repos, databases, APIs, or infrastructure that MUST be integrated.
 3. **Zero-Tolerance:** Identify any feature that "sounds nice" but isn't part of the "Core". Mark it for deferred consideration.
+4. **State Initialization:** Create the `[project]_plan/` folder and initialize `progress.json` and `execution_log.md`.
 
 **"I never look back! It distracts from the 'now'!"**
