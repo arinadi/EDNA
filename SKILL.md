@@ -25,7 +25,7 @@ EDNA guides you through a structured **5-phase workflow** to go from raw idea to
 2.  **[Phase 1: Requirement Discovery](references/phase-1-prd.md)** - Requirement discovery and `PRD.md` generation.
 3.  **[Phase 2: Global Architecture & Design](references/phase-2-architecture.md)** - Master plan, data model, and `design.md` from `awesome-design-md`.
 4.  **[Phase 3: Granular Specification](references/phase-3-modules.md)** - Self-contained module specs with binary pass/fail criteria.
-5.  **[Phase 4: Agent Prompt](references/phase-4-agent-prompt.md)** - Battle-ready execution prompt for iterative coding.
+5.  **[Phase 4: Agent Directive](references/phase-4-agent.md)** - Battle-ready execution prompt for iterative coding.
 
 ## Project Folder Structure
 
@@ -37,9 +37,9 @@ All planning deliverables live inside the `[project]_plan/` folder:
 ├── modules.md                  # Phase 2 (Architecture)
 ├── design.md                   # Phase 2 (Design System)
 ├── modules/                    # Phase 3
-├── agent_prompt.md             # Phase 4
+├── agent.md                    # Phase 4 (Agent Directive)
 ├── reference/                  # API/Library docs
-├── progress.json               # Runtime State
+...
 ├── execution_log.md            # Runtime Log
 └── decisions.md                # ADR (Architectural Decision Records)
 ```

@@ -1,6 +1,6 @@
-# Phase 4: Agent Prompt (Iterative Agentic Coding)
+# Phase 4: Agent Directive (Iterative Agentic Coding)
 
-**Goal:** Create `agent_prompt.md` — the battle-ready execution prompt.
+**Goal:** Create `agent.md` — the battle-ready execution directive.
 
 ### Operational Guidelines
 
@@ -18,4 +18,4 @@
    * **Evaluation Loop** (Every 3 modules)
 
 ### Structure
-Use the [Agent Prompt Template](../templates/agent_prompt.md).
+Use the [Agent Template](../templates/agent.md).
