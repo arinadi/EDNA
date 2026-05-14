@@ -61,9 +61,9 @@ EDNA doesn't wing it. She follows a strict lifecycle:
 |:---:|:--- |:--- |
 | **0** | **Foundation** | Landscape audit & project mode selection. |
 | **1** | **Discovery** | `PRD.md` — The source of truth. |
-| **2** | **Orchestration** | `modules.md` — The architectural backbone. |
+| **2** | **Orchestration** | `modules.md` & `design.md` — The architectural backbone. |
 | **3** | **Specification** | `modules/` — Testable, binary-pass specs. |
-| **4** | **Execution** | `agent_prompt.md` — The implementer's directive. |
+| **4** | **Execution** | `agent.md` — The implementer's directive. |
 
 ---
 
@@ -95,7 +95,7 @@ For **Gemini CLI**, the skill is automatically discovered. You can also manually
 
 ---
 
-## 🛠️ The 5-Phase Master Plan
+## 🛡️ Built-in Resilience
 
 *   **Auto-Recovery:** Automatic `git revert` after 3 failures. We don't ship broken code.
 *   **Resume State:** `progress.json` knows where you left off. Crashes are irrelevant.

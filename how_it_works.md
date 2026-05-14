@@ -10,7 +10,7 @@ LLM performance depends on the quality and fidelity of the provided context. Age
     LLMs have finite token limits. Accuracy decreases as the window reaches capacity, often leading to the **"Lost in the Middle"** effect where the model ignores critical instructions.
 *   **Accuracy and Hallucination**
     In extended development cycles, models can lose track of initial architectural constraints. This leads to **hallucinations** where the AI generates code that conflicts with the established global state.
-*   **Modular Isolation (Feature-First Skill Architecture)**
+*   **Modular Isolation (Feature-First Architecture)**
     EDNA operates as a modular **AI Skill**, enforcing **Feature-Driven Modularization**. Each module represents a complete, integrated feature (Design + Logic). 
     > **Rationale:** Layer-based development often leads to **"Dummy Debt,"** where UI components remain disconnected from backend logic. 
     >
@@ -21,13 +21,13 @@ LLM performance depends on the quality and fidelity of the provided context. Age
 ---
 
 ### Client-Skill Integration Architecture
-Agent EDNA operates as a standardized **AI Skill**, following a lifecycle of discovery, semantic matching, and execution within the host agent (Claude Code, Gemini CLI, etc.).
+Agent EDNA operates as a standardized **AI Skill**, following a lifecycle of discovery, semantic matching, and execution within the host agent.
 
 #### **Discovery & Indexing**
 Upon startup, the host agent scans predefined directories. It parses the **YAML frontmatter** in `SKILL.md` to index:
 *   **Skill Identity:** The internal name (`edna`).
 *   **Activation Triggers:** Descriptive keywords used for semantic matching.
-*   **Tool Manifest:** A declaration of allowed system tools (e.g., `read_file`, `write_file`, `run_shell_command`).
+*   **Tool Manifest:** A declaration of allowed system tools (e.g., `Read`, `Write`, `Edit`, `Bash`).
 
 #### **Execution Lifecycle**
 1.  **Semantic Triggering:** When user input matches the skill's description, the host agent loads the full instruction set from `SKILL.md` into the active context.
@@ -47,7 +47,7 @@ This section contrasts unmanaged LLM generation (one-shot prompting) with a mana
 | **Input Analysis** | Direct code generation from ambiguous natural language instructions. | Structured extraction of implicit constraints prior to implementation. |
 | **Logic Verification** | Relies on model probability for gap filling; prone to inconsistent logic. | Enforces **Binary Validation Criteria** within specs to ensure deterministic output. |
 | **Context Management** | Combines multiple layers in a single turn, increasing context degradation. | Uses **Feature-Driven Modularization** to maintain a focused context window per task. |
-| **Recovery Strategy** | Heuristic patching of errors, which propagates technical debt. | Implements a **3-Attempt Limit** followed by an automated **Git Rollback** to a verified state. |
+| **Recovery Strategy** | Heuristic patching of errors, which propagates Technical Debt. | Implements a **3-Attempt Limit** followed by an automated **Git Rollback** to a verified state. |
 | **State Persistence** | Transient; depends on immediate session history. | Persistent; uses `progress.json` and `decisions.md` (ADR) to maintain state across sessions. |
 
 ---
@@ -57,7 +57,8 @@ This section contrasts unmanaged LLM generation (one-shot prompting) with a mana
 #### **Requirement Discovery**
 EDNA uses systematic discovery to extract requirements. The resulting `PRD.md` serves as the primary **technical specification**.
 
-#### **Phase 2: Global Architecture**
+#### **Phase 2: Global Architecture & Design**
+*   **Design Research:** Searching for matching design systems from [awesome-design-md](https://github.com/voltagent/awesome-design-md).
 *   **Storage-Agnostic Modeling:** Data entities are defined by relationships and field types. Implementation details are deferred to keep core logic decoupled.
 *   **Risk Analysis:** Identification of critical dependencies and potential cascading failures across the module graph.
 
@@ -65,7 +66,7 @@ EDNA uses systematic discovery to extract requirements. The resulting `PRD.md` s
 Modules are defined with a limited scope (typically under 20 files). Each specification includes **Binary Pass/Fail Criteria** for objective validation.
 
 #### **Phase 4: Execution Loop**
-EDNA generates an `agent_prompt.md` that directs implementation. It enforces dependency reviews and automated **validation gates** (linting, type-checking, and security scans).
+EDNA generates an `agent.md` directive that guides implementation. It enforces dependency reviews and automated **validation gates** (linting, type-checking, and security scans).
 
 ---
 
@@ -91,10 +92,10 @@ sequenceDiagram
     EDNA->>User: Request PRD Review
     User->>EDNA: Approve PRD
     
-    Note over EDNA: Phase 2: Global Architecture
-    EDNA->>Plan: Create modules.md (Data Model & Tech)
-    EDNA->>User: Request Architecture Review
-    User->>EDNA: Approve Architecture
+    Note over EDNA: Phase 2: Global Architecture & Design
+    EDNA->>Plan: Create modules.md & design.md
+    EDNA->>User: Request Review
+    User->>EDNA: Approve
     
     Note over EDNA: Phase 3: Granular Specs
     EDNA->>Plan: Populate reference/ & modules/ (Specs)
@@ -103,7 +104,7 @@ sequenceDiagram
     User->>EDNA: Approve & Start Build
     
     Note right of Plan: Phase 4: Execution Loop
-    EDNA->>Coder: Pass Prompt + Context
+    EDNA->>Coder: Pass Directive + Context
     Coder->>Plan: Read Current Module Spec
     Coder->>Coder: Implement & Validate
     alt Success
