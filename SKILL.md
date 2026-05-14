@@ -38,7 +38,7 @@ All planning deliverables live inside the `[project]_plan/` folder:
 ├── design.md                   # Phase 2 (Design System)
 ├── modules/                    # Phase 3
 ├── agent_prompt.md             # Phase 4
-...
+├── reference/                  # API/Library docs
 ├── progress.json               # Runtime State
 ├── execution_log.md            # Runtime Log
 └── decisions.md                # ADR (Architectural Decision Records)
